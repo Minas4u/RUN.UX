@@ -315,22 +315,30 @@
         .today-pace-table th {
             background-color: #f9fafb; /* stone-50 */
             font-weight: 500; /* medium */
-            color: #4b5563; /* stone-600 */
         }
+        /* Specific colors for pace table headers */
+        .today-pace-table th.header-zone { color: #1f2937; } /* Default black/dark gray */
+        .today-pace-table th.header-pace { color: #1f2937; } /* Default black/dark gray */
+        .today-pace-table th.header-low { color: #2563eb; } /* blue-600 */
+        .today-pace-table th.header-average { color: #16a34a; } /* green-600 */
+        .today-pace-table th.header-high { color: #dc2626; } /* red-600 */
+
         .today-pace-table td:first-child { /* Zone name or Dist. cell */
             font-weight: 500;
         }
         /* Framed box for today's activity */
         .todays-activity-box {
-            border: 1px solid #e0e7ff; /* indigo-200 */
-            background-color: #eef2ff; /* indigo-50 */
-            padding: 0.75rem; /* p-3 */
-            border-radius: 0.375rem; /* rounded-md */
-            margin-top: 0.5rem; /* mt-2 */
+            border: 1px solid #e5e7eb; 
+            background-color: #ffffff; 
+            padding: 0.75rem; 
+            border-radius: 0.375rem; 
+            margin-top: 0.5rem; 
         }
-        .todays-activity-box p strong { /* Make activity text bold */
-            font-weight: 600; /* semibold */
-            color: #312e81; /* indigo-900 for emphasis */
+        .todays-activity-box p strong { 
+            font-weight: 600; 
+            color: #0369a1; /* sky-700 */
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.6; 
         }
 
 
@@ -404,24 +412,19 @@
     </div>
 
 <script>
-// Default race date if none is stored or selected
 const DEFAULT_RACE_DATE_STRING = '2025-11-09';
 let currentWebAppUrl = ''; 
 
-// --- User-Specific Data Sources ---
 const userSpecificDataSources = {
     "USER_HELIOS": "https://script.google.com/macros/s/AKfycbwcdAtQXpojQk4_jtn4pHoZm2JQihJaYMogcJZJNJLX46ILP0zODpuPyVi0b5n9wLeG7w/exec", 
     "USER_APOLLO": "YOUR_APPS_SCRIPT_URL_FOR_APOLLO_SHEET_HERE",
 };
 
-
-// --- Global Variables ---
 let marathonPlan = null; 
 let datedTrainingPlan = []; 
 let currentRaceDate = null; 
 let calendarCurrentDisplayDate = new Date(); 
 
-// --- DOM Element References ---
 const loginContainer = document.getElementById('login-container');
 const mainAppWrapper = document.getElementById('main-app-wrapper');
 const appContent = document.getElementById('app-content');
@@ -432,7 +435,6 @@ const loginLoadingMessageDiv = document.getElementById('login-loading-message');
 
 let mileageChartInstance = null; 
 
-// --- Gemini API Call via Apps Script Proxy (Kept for potential future use) ---
 async function callGeminiApi(prompt, targetElementId, loadingElementId) {
     const targetElement = document.getElementById(targetElementId);
     const loadingIndicator = document.getElementById(loadingElementId);
@@ -516,9 +518,6 @@ async function callGeminiApi(prompt, targetElementId, loadingElementId) {
     }
 }
 
-/**
- * Updates static UI text elements based on marathonPlan.uiText
- */
 function updateStaticUIText() {
     if (!marathonPlan || !marathonPlan.uiText) {
         console.warn("marathonPlan.uiText not available. Using default HTML text.");
@@ -553,8 +552,6 @@ function updateStaticUIText() {
     document.getElementById('nav-pacer').textContent = uiText.navButtonPacer || 'Pacer';
 }
 
-
-// --- Data Fetching and Initialization ---
 async function fetchMarathonPlan(webAppUrlToUse) {
     if (!webAppUrlToUse) {
         console.error("No Web App URL for fetching plan.");
@@ -595,7 +592,9 @@ async function fetchMarathonPlan(webAppUrlToUse) {
             localStorage.setItem('marathonRaceDate', DEFAULT_RACE_DATE_STRING);
         }
         calculateAndStoreDatedTrainingPlan(currentRaceDate);
-        calendarCurrentDisplayDate = new Date(currentRaceDate.getFullYear(), currentRaceDate.getMonth(), 1);
+        // Initialize calendar to current actual month
+        calendarCurrentDisplayDate = new Date(); 
+        calendarCurrentDisplayDate.setDate(1); // Set to the first day of the current month
         return true;
     } catch (error) {
         console.error('Failed to fetch marathon plan:', error);
@@ -649,7 +648,6 @@ async function handleLogin() {
     }
 }
 
-// --- UI Rendering Functions ---
 function setActiveNav(activeId) {
     const navButtons = document.querySelectorAll('.nav-button');
     navButtons.forEach(btn => {
@@ -674,7 +672,6 @@ function createHtmlList(items) {
     }).join('')}</ul>`;
 }
 
-// --- Date Utility Functions ---
 function isValidDate(d) { return d instanceof Date && !isNaN(d); }
 function formatDate(date, options = { year: 'numeric', month: 'long', day: 'numeric' }) {
     if (!isValidDate(date)) return "N/A";
@@ -717,13 +714,11 @@ function calculateAndStoreDatedTrainingPlan(raceDateInput) {
     }
 }
 
-// --- Compact Pace Table Renderer for Today's Section ---
 function renderTodayPaces(lt2PaceString) {
     const zonesContainer = document.getElementById('today-zones-content');
     const repeatsContainer = document.getElementById('today-repeats-content');
 
     if (!zonesContainer || !repeatsContainer ) { 
-        console.error("Missing elements for today's pace display.");
         if(zonesContainer) zonesContainer.innerHTML = `<p class="text-xs text-red-500 italic">UI error for pace display.</p>`;
         return;
     }
@@ -741,7 +736,6 @@ function renderTodayPaces(lt2PaceString) {
         return;
     }
 
-    // Training Zones
     const zonesData = [
         { name: "Z1", descriptor: "Easy/Rec", lowPaceFactor: 1.54, highPaceFactor: 1.33, colorClass: "text-green-600" },
         { name: "Z2", descriptor: "Aerobic", lowPaceFactor: 1.32, highPaceFactor: 1.16, colorClass: "text-sky-600" },
@@ -750,11 +744,11 @@ function renderTodayPaces(lt2PaceString) {
         { name: "Z5", descriptor: "VO2 Max", lowPaceFactor: 0.90, highPaceFactor: 0.83, colorClass: "text-red-600" }
     ];
     let zonesTableHtml = `<table class="today-pace-table"><thead><tr>
-                            <th class="text-black">Zone</th>
-                            <th class="text-black">Pace</th>
-                            <th class="text-blue-600">Low</th>
-                            <th class="text-green-600">Average</th>
-                            <th class="text-red-600">High</th>
+                            <th class="header-zone">Zone</th>
+                            <th class="header-pace">Pace</th>
+                            <th class="header-low">Low</th>
+                            <th class="header-average">Average</th>
+                            <th class="header-high">High</th>
                           </tr></thead><tbody>`;
     zonesData.forEach(zone => {
         const sPS = lt2SpeedInSeconds * zone.lowPaceFactor; 
@@ -771,7 +765,6 @@ function renderTodayPaces(lt2PaceString) {
     zonesTableHtml += `</tbody></table>`;
     zonesContainer.innerHTML = zonesTableHtml;
 
-    // Repeats Paces
     const repeatDistances = [
         {d:"3km",f:1.02,m:3},{d:"1 Mile",f:0.98,m:1.60934},{d:"1km",f:0.95,m:1},
         {d:"800m",f:0.92,m:0.8},{d:"400m",f:0.88,m:0.4},{d:"200m",f:0.85,m:0.2}
@@ -786,8 +779,6 @@ function renderTodayPaces(lt2PaceString) {
     repeatsContainer.innerHTML = repeatsTableHtml;
 }
 
-
-// --- Overview Tab Rendering ---
 function renderTodaysTraining() {
     const container = document.getElementById('todays-training-content');
     if (!container || !marathonPlan || !marathonPlan.uiText || !marathonPlan.uiText.overview) {
@@ -819,7 +810,7 @@ function renderTodaysTraining() {
         activityContentHtml = `
             <div class="todays-activity-box">
                 <p><strong>${activityText}</strong></p> 
-                ${todaysActivity.notes ? `<p class="text-sm text-stone-600 italic mt-1"><strong>Weekly Notes:</strong> ${todaysActivity.notes}</p>` : ''}
+                ${todaysActivity.notes ? `<p class="text-sm italic mt-1"><strong class="text-stone-600">Weekly Notes:</strong> <span class="text-stone-800">${todaysActivity.notes}</span></p>` : ''}
                 <p class="text-xs text-stone-500 mt-1">Phase: ${todaysActivity.phaseName} | Week: ${todaysActivity.weekNum}</p>
             </div>
         `;
@@ -930,7 +921,7 @@ function renderThisWeeksPlan() {
                         </tbody>
                     </table>
                 </div>
-                ${weekNotes ? `<p class="text-sm text-stone-600 italic mt-3 p-3 bg-stone-100 rounded-md"><strong>Weekly Notes:</strong> ${weekNotes}</p>` : ''}
+                ${weekNotes ? `<p class="text-sm italic mt-3 p-3 bg-stone-100 rounded-md"><strong class="text-stone-600">Weekly Notes:</strong> <span class="text-stone-800">${weekNotes}</span></p>` : ''}
             </div>
         `;
         const pdfBtn = document.getElementById('printWeekPdfBtn');
@@ -1021,7 +1012,6 @@ function renderMileageChart() {
     });
 }
 
-// --- News Tab Rendering ---
 function renderNewsTab() {
     if (!marathonPlan || !marathonPlan.uiText || !marathonPlan.uiText.news ) return;
     setActiveNav('nav-news');
@@ -1040,8 +1030,6 @@ function renderNewsTab() {
     appContent.appendChild(newsSection);
 }
 
-
-// --- Training Plan Tab Rendering ---
 function getPhaseButtonClass(phaseName) {
     const nameLower = phaseName.toLowerCase();
     if (nameLower.includes("preseason")) return "phase-button-preseason";
@@ -1216,11 +1204,10 @@ function renderWeekDetails(phaseIndex, weekIndex) {
                     <tbody class="divide-y divide-stone-200">${tableRowsHtml}</tbody>
                 </table>
             </div>
-            ${week.notes ? `<p class="text-sm text-stone-600 italic mt-3 p-3 bg-stone-100 rounded-md"><strong>Notes:</strong> ${week.notes}</p>` : ''}
+            ${week.notes ? `<p class="text-sm italic mt-3 p-3 bg-stone-100 rounded-md"><strong class="text-stone-600">Notes:</strong> <span class="text-stone-800">${week.notes}</span></p>` : ''}
         </div>`;
 }
 
-// --- Calendar Tab Rendering ---
 function getActivityThumbnailClass(activityText) {
     const lowerActivity = activityText.toLowerCase();
     if (lowerActivity.includes("race day")) return "activity-thumbnail-race";
@@ -1243,7 +1230,7 @@ function renderCalendarTab() {
 
     calendarSection.innerHTML = `
         <div class="content-card overview-section-card">
-            <h2 class="text-xl sm:text-2xl font-semibold text-sky-700 mb-2">${uiText.mainTitle || 'Training Calendar'}</h2>
+            <h2 class="text-xl sm:text-2xl font-semibold text-amber-500 mb-2">${uiText.mainTitle || 'Training Calendar'}</h2>
             <div id="calendar-selected-day-header" class="mb-2 text-lg font-medium text-sky-700"></div> 
             <div id="calendar-day-details-content" class="mb-4"></div> 
             <div id="calendar-controls" class="flex justify-between items-center mb-4">
@@ -1276,6 +1263,7 @@ function renderCalendarTab() {
     document.getElementById('prevMonthBtn').addEventListener('click', () => { calendarCurrentDisplayDate.setMonth(calendarCurrentDisplayDate.getMonth() - 1); renderCalendarGrid(); document.getElementById('calendar-day-details-content').innerHTML = ''; document.getElementById('calendar-selected-day-header').innerHTML = ''; });
     document.getElementById('nextMonthBtn').addEventListener('click', () => { calendarCurrentDisplayDate.setMonth(calendarCurrentDisplayDate.getMonth() + 1); renderCalendarGrid(); document.getElementById('calendar-day-details-content').innerHTML = ''; document.getElementById('calendar-selected-day-header').innerHTML = ''; });
     renderCalendarGrid();
+    renderSelectedCalendarDayDetails(new Date()); // Show today's details by default
 }
 
 function renderCalendarGrid() {
@@ -1324,16 +1312,18 @@ function renderSelectedCalendarDayDetails(date) {
         return isSameDay(itemDate, selectedDate);
     });
 
-    // Update header to only show date
     headerContainer.innerHTML = `<h4 class="text-lg font-semibold text-sky-700">${formatDate(date, { month: 'long', day: 'numeric', year: 'numeric' })}</h4>`;
 
     if (activityDetails) {
         let activityText = activityDetails.activity.replace(/^[^:]+:\s*/, '');
         detailsContainer.innerHTML = `
             <div class="content-card mt-0" id="calendar-day-details-printable-area"> 
-                <p class="text-stone-700 mb-1"><strong>Activity:</strong> ${activityText}</p>
+                <p class="mb-1">
+                    <strong class="text-sky-600">Activity:</strong> 
+                    <span class="text-amber-500">${activityText}</span>
+                </p>
                 <p class="text-xs text-stone-500 mb-1">Phase: ${activityDetails.phaseName} | Week: ${activityDetails.weekNum}</p>
-                ${activityDetails.notes ? `<p class="text-sm text-stone-600 italic mt-1"><strong>Weekly Notes:</strong> ${activityDetails.notes}</p>` : ''}
+                ${activityDetails.notes ? `<p class="text-sm italic mt-1"><strong class="text-stone-600">Weekly Notes:</strong> <span class="text-stone-800">${activityDetails.notes}</span></p>` : ''}
             </div>`;
     } else {
         detailsContainer.innerHTML = `
@@ -1343,7 +1333,6 @@ function renderSelectedCalendarDayDetails(date) {
     }
 }
 
-// --- Pace Utilities Tab Rendering ---
 function renderPaceUtilities() {
     if (!marathonPlan || !marathonPlan.uiText || !marathonPlan.uiText.pacer) return;
     setActiveNav('nav-pacer');
@@ -1441,7 +1430,7 @@ function calculatePacesFromUtil() {
     const racePaceInfo = { name: "MP (Est.)", descriptor: "", lowPaceFactor: 1.15, highPaceFactor: 1.10, colorClass: "text-purple-600" };
     zonesContentDiv.innerHTML = ''; 
     const zonesTable = document.createElement('table'); zonesTable.className = 'data-table text-sm w-full';
-    zonesTable.innerHTML = `<thead><tr><th class="p-2">Zone</th><th class="p-2">Pace/km</th></tr></thead><tbody></tbody>`;
+    zonesTable.innerHTML = `<thead><tr><th class="p-2">Zone</th><th class="p-2">Pace</th></tr></thead><tbody></tbody>`;
     const zonesTbody = zonesTable.querySelector('tbody');
     [...zonesData, racePaceInfo].forEach(zone => {
         const sPS = lt2SpeedInSeconds*zone.lowPaceFactor; 
@@ -1471,7 +1460,6 @@ function calculatePacesFromUtil() {
     repeatsContentDiv.insertAdjacentHTML('beforeend', '<p class="text-xs text-stone-500 mt-2">Estimates. Adjust reps/recovery.</p>');
 }
 
-// --- Cardiac Drift Calculator Functions ---
 function convertPaceToKmhCD(paceStr) {
     if (!paceStr || typeof paceStr !== 'string') return null;
     const parts = paceStr.split(':');
@@ -1538,7 +1526,6 @@ function displayCardiacDriftResult(driftValue) {
     else resultArea.classList.add('result-red');
 }
 
-// --- DOMContentLoaded Event Listener ---
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('loginButton').textContent = 'Load Plan';
     document.getElementById('mainTitleProject').textContent = 'project:';
