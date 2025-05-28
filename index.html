@@ -10,123 +10,115 @@
     <style>
         body {
             font-family: 'Ubuntu', sans-serif;
-            background-color: #f0f4f8; /* Light blue-grey background */
-            color: #1e293b; /* Slate-800 for primary text */
+            background-color: #f0f4f8; 
+            color: #1e293b; 
         }
         .main-container {
-            background-color: #ffffff; /* White background for the main card */
-            border-radius: 0.75rem; /* 12px */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Tailwind shadow-xl */
+            background-color: #ffffff; 
+            border-radius: 0.75rem; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
             width: 100%;
-            max-width: 64rem; /* 1024px, Tailwind max-w-6xl */
-            padding: 1.5rem; /* 24px */
+            max-width: 64rem; 
+            padding: 1.5rem; 
             margin-left: auto;
             margin-right: auto;
         }
-        @media (min-width: 640px) { /* sm breakpoint */
+        @media (min-width: 640px) { 
             .main-container {
-                padding: 2rem; /* 32px */
+                padding: 2rem; 
             }
         }
         .nav-button {
-            padding: 0.6rem 1.1rem; /* Adjusted padding */
-            border-radius: 0.375rem; /* 6px */
+            padding: 0.6rem 1.1rem; 
+            border-radius: 0.375rem; 
             transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            font-weight: 600; /* semibold */
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Tailwind shadow-sm */
+            font-weight: 600; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
         }
-        .nav-button:hover:not(.active-overview):not(.active-plan):not(.active-calendar):not(.active-pacer):not(.active-news) { /* Default hover for non-active */
-            background-color: #f3f4f6; /* gray-100 */
-            color: #1f2937; /* gray-800 */
+        .nav-button:hover:not(.active-overview):not(.active-plan):not(.active-calendar):not(.active-pacer):not(.active-news) { 
+            background-color: #f3f4f6; 
+            color: #1f2937; 
         }
 
-        /* Active state for Overview Button */
-        .nav-button.active-overview { background-color: #0284c7; color: white; } /* sky-600 */
-        .nav-button.active-overview:hover { background-color: #0369a1; } /* sky-700 */
+        .nav-button.active-overview { background-color: #0284c7; color: white; } 
+        .nav-button.active-overview:hover { background-color: #0369a1; } 
 
-        /* Active state for Plan Button */
-        .nav-button.active-plan { background-color: #f59e0b; color: white; } /* amber-500 */
-        .nav-button.active-plan:hover { background-color: #d97706; } /* amber-600 */
+        .nav-button.active-plan { background-color: #f59e0b; color: white; } 
+        .nav-button.active-plan:hover { background-color: #d97706; } 
         
-        /* Active state for Calendar Button */
-        .nav-button.active-calendar { background-color: #059669; color: white; } /* emerald-600 */
-        .nav-button.active-calendar:hover { background-color: #047857; } /* emerald-700 */
+        .nav-button.active-calendar { background-color: #059669; color: white; } 
+        .nav-button.active-calendar:hover { background-color: #047857; } 
 
-        /* Active state for Pacer Button */
-        .nav-button.active-pacer { background-color: #e11d48; color: white; } /* rose-600 */
-        .nav-button.active-pacer:hover { background-color: #be123c; } /* rose-700 */
+        .nav-button.active-pacer { background-color: #e11d48; color: white; } 
+        .nav-button.active-pacer:hover { background-color: #be123c; } 
         
-        /* Active state for News Button */
-        .nav-button.active-news { background-color: #4f46e5; color: white; } /* indigo-600 */
-        .nav-button.active-news:hover { background-color: #4338ca; } /* indigo-700 */
+        .nav-button.active-news { background-color: #4f46e5; color: white; } 
+        .nav-button.active-news:hover { background-color: #4338ca; } 
 
 
         .phase-button {
             padding: 0.5rem 1rem;
-            border-radius: 0.375rem; /* 6px */
+            border-radius: 0.375rem; 
             border-width: 1px;
             transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
             font-weight: 500;
         }
-        .phase-button-preseason { border-color: #d1d5db; color: #4b5563; } /* gray-300 border, gray-600 text */
-        .phase-button-preseason:hover:not(.active) { background-color: #f3f4f6; } /* gray-100 hover */
-        .phase-button-preseason.active { background-color: #6b7280; color: white; border-color: #6b7280; } /* gray-500 active */
+        .phase-button-preseason { border-color: #d1d5db; color: #4b5563; } 
+        .phase-button-preseason:hover:not(.active) { background-color: #f3f4f6; } 
+        .phase-button-preseason.active { background-color: #6b7280; color: white; border-color: #6b7280; } 
         
-        .phase-button-base { border-color: #0ea5e9; color: #0369a1; } /* sky-500 border, sky-700 text */
-        .phase-button-base:hover:not(.active) { background-color: #e0f2fe; } /* sky-100 hover */
-        .phase-button-base.active { background-color: #0ea5e9; color: white; } /* sky-500 active */
+        .phase-button-base { border-color: #0ea5e9; color: #0369a1; } 
+        .phase-button-base:hover:not(.active) { background-color: #e0f2fe; } 
+        .phase-button-base.active { background-color: #0ea5e9; color: white; } 
         
-        .phase-button-specific { border-color: #10b981; color: #047857; } /* emerald-500 border, emerald-700 text */
-        .phase-button-specific:hover:not(.active) { background-color: #d1fae5; } /* emerald-100 hover */
-        .phase-button-specific.active { background-color: #059669; color: white; border-color: #059669; } /* emerald-600 active */
+        .phase-button-specific { border-color: #10b981; color: #047857; } 
+        .phase-button-specific:hover:not(.active) { background-color: #d1fae5; } 
+        .phase-button-specific.active { background-color: #059669; color: white; border-color: #059669; } 
         
-        .phase-button-taper { border-color: #ef4444; color: #b91c1c; } /* red-500 border, red-700 text */
-        .phase-button-taper:hover:not(.active) { background-color: #fee2e2; } /* red-100 hover */
-        .phase-button-taper.active { background-color: #dc2626; color: white; border-color: #dc2626; } /* red-600 active */
+        .phase-button-taper { border-color: #ef4444; color: #b91c1c; } 
+        .phase-button-taper:hover:not(.active) { background-color: #fee2e2; } 
+        .phase-button-taper.active { background-color: #dc2626; color: white; border-color: #dc2626; } 
         
         .week-button {
-            padding: 0.5rem 0.75rem; border-radius: 0.375rem; border: 1px solid #9ca3af; /* gray-400 */
+            padding: 0.5rem 0.75rem; border-radius: 0.375rem; border: 1px solid #9ca3af; 
             font-weight: 500; text-align: center;
             transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
         }
-        .week-button.active { /* General active style for week buttons */
-            background-color: #0284c7; /* sky-600 for active week button */
-            color: white !important; /* Ensure text is white */
-            border-color: #0284c7; /* sky-600 border */
+        .week-button.active { 
+            background-color: #0284c7; 
+            color: white !important; 
+            border-color: #0284c7; 
         }
         
-        /* Text color for non-active week buttons, specific to phase */
-        .week-button-text-preseason { color: #4b5563; } /* gray-600 */
+        .week-button-text-preseason { color: #4b5563; } 
         .week-button-text-preseason:not(.active):hover { background-color: #f3f4f6; border-color: #9ca3af; }
 
-        .week-button-text-base { color: #0369a1; } /* sky-700 */
+        .week-button-text-base { color: #0369a1; } 
         .week-button-text-base:not(.active):hover { background-color: #e0f2fe; border-color: #7dd3fc; }
 
-        .week-button-text-specific { color: #047857; } /* emerald-700 */
+        .week-button-text-specific { color: #047857; } 
         .week-button-text-specific:not(.active):hover { background-color: #d1fae5; border-color: #6ee7b7;}
 
-        .week-button-text-taper { color: #b91c1c; } /* red-700 */
+        .week-button-text-taper { color: #b91c1c; } 
         .week-button-text-taper:not(.active):hover { background-color: #fee2e2; border-color: #fca5a5;}
         
         .content-card {
-            background-color: #fafaf9; padding: 1rem; /* stone-50 */
-            border-radius: 0.5rem; border: 1px solid #e7e5e4; /* stone-200 */
+            background-color: #fafaf9; padding: 1rem; 
+            border-radius: 0.5rem; border: 1px solid #e7e5e4; 
         }
-        .content-card h3.phase-title-style { margin-bottom: 0.5rem; } /* For phase titles */
+        .content-card h3.phase-title-style { margin-bottom: 0.5rem; } 
         
-        /* Specific styling for overview section cards */
         .overview-section-card { 
             border-left-width: 4px;
             border-bottom-width: 4px;
-            border-left-color: #0284c7; /* sky-600 */
-            border-bottom-color: #f59e0b; /* amber-500 */
+            border-left-color: #0284c7; 
+            border-bottom-color: #f59e0b; 
         }
-         /* Specific styling for news section card */
         .news-section-card {
             border-left-width: 4px;
             border-bottom-width: 4px;
-            border-left-color: #4f46e5; /* indigo-600 */
-            border-bottom-color: #059669; /* emerald-600 */
+            border-left-color: #4f46e5; 
+            border-bottom-color: #059669; 
         }
 
 
@@ -141,8 +133,8 @@
         .schedule-table tr:last-child td { border-bottom: none; }
         .schedule-table td:first-child { font-weight: 500; width: 25%; max-width: 100px; }
         input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus {
-            outline: 2px solid transparent; outline-offset: 2px; border-color: #0ea5e9; /* sky-500 */
-            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3); /* sky-500 with opacity */
+            outline: 2px solid transparent; outline-offset: 2px; border-color: #0ea5e9; 
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3); 
         }
         .header-logo-container { display: inline-block; padding: 0.75rem; background-color: #0284c7; border-radius: 0.5rem; }
         .header-logo { max-height: 50px; display: block; }
@@ -151,18 +143,18 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         #loading-message, #error-message, #login-error-message { text-align: center; padding: 2rem; font-size: 1.125rem; font-weight: 500; }
-        #loading-message { color: #0369a1; } /* sky-700 */
-        #error-message, #login-error-message { color: #dc2626; background-color: #fee2e2; border: 1px solid #f87171; border-radius: 0.5rem; } /* red-600 text, red-100 bg, red-400 border */
+        #loading-message { color: #0369a1; } 
+        #error-message, #login-error-message { color: #dc2626; background-color: #fee2e2; border: 1px solid #f87171; border-radius: 0.5rem; } 
         
         /* Calendar Styles */
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background-color: #e5e7eb; border: 1px solid #e5e7eb; }
         .calendar-header { text-align: center; padding: 0.5rem; background-color: #f9fafb; font-weight: 600; font-size: 0.875rem; color: #374151; }
         .calendar-day { background-color: #fff; padding: 0.5rem; min-height: 100px; font-size: 0.75rem; border: 1px solid #f3f4f6; cursor: default; }
         .calendar-day.has-activity { cursor: pointer; }
-        .calendar-day.has-activity:hover { background-color: #f0f9ff; } /* sky-50 hover */
+        .calendar-day.has-activity:hover { background-color: #f0f9ff; } 
         .calendar-day.other-month { background-color: #f9fafb; color: #9ca3af; cursor: default;}
         .calendar-day.other-month:hover { background-color: #f9fafb; }
-        .calendar-day.is-today { background-color: #ecfdf5; border: 2px solid #10b981; } /* emerald-50 bg, emerald-500 border */
+        .calendar-day.is-today { background-color: #ecfdf5; border: 2px solid #10b981; } 
         .calendar-day .day-number { font-weight: 600; margin-bottom: 0.25rem; display: block; }
         
         .activity-thumbnail { 
@@ -170,27 +162,26 @@
             padding: 0.25rem; border-radius: 0.25rem; margin-top: 0.25rem;
             font-size: 0.7rem;
         }
-        .activity-thumbnail-easy { background-color: #e0f2fe; color: #0c4a6e; } /* sky-100 bg, sky-800 text */
-        .activity-thumbnail-tempo { background-color: #ffedd5; color: #c2410c; } /* orange-100 bg, orange-700 text */
-        .activity-thumbnail-interval { background-color: #fee2e2; color: #b91c1c; } /* red-100 bg, red-700 text */
-        .activity-thumbnail-long { background-color: #f3e8ff; color: #7e22ce; } /* purple-100 bg, purple-700 text */
-        .activity-thumbnail-race { background-color: #fce7f3; color: #be185d; } /* pink-100 bg, pink-700 text */
-        .activity-thumbnail-rest { background-color: #f1f5f9; color: #475569; } /* slate-100 bg, slate-600 text */
-        .activity-thumbnail-default { background-color: #e0f2fe; color: #0c4a6e; } /* Fallback, same as easy */
+        .activity-thumbnail-easy { background-color: #e0f2fe; color: #0c4a6e; } 
+        .activity-thumbnail-tempo { background-color: #ffedd5; color: #c2410c; } 
+        .activity-thumbnail-interval { background-color: #fee2e2; color: #b91c1c; } 
+        .activity-thumbnail-long { background-color: #f3e8ff; color: #7e22ce; } 
+        .activity-thumbnail-race { background-color: #fce7f3; color: #be185d; } 
+        .activity-thumbnail-rest { background-color: #f1f5f9; color: #475569; } 
+        .activity-thumbnail-default { background-color: #e0f2fe; color: #0c4a6e; } 
 
         /* Overview card specific borders */
-        #todays-training-card { border-left: 4px solid #0ea5e9; } /* sky-500 */
-        #this-weeks-plan-card { border-left: 4px solid #10b981; } /* emerald-500 */
+        #todays-training-card { border-left: 4px solid #0ea5e9; } 
+        #this-weeks-plan-card { border-left: 4px solid #10b981; } 
         
-        /* Gemini AI Response Area (Kept for potential future use, but not actively used by removed features) */
         .gemini-response-area {
-            margin-top: 1rem; padding: 0.75rem; background-color: #e0f2fe; /* sky-100 */
-            border-radius: 0.375rem; border: 1px solid #bae6fd; /* sky-200 */
-            font-size: 0.875rem; color: #0c4a6e; /* sky-800 */
+            margin-top: 1rem; padding: 0.75rem; background-color: #e0f2fe; 
+            border-radius: 0.375rem; border: 1px solid #bae6fd; 
+            font-size: 0.875rem; color: #0c4a6e; 
             max-height: 200px; overflow-y: auto;
         }
         .gemini-response-area p { margin-bottom: 0.5rem;}
-        .gemini-response-area strong { color: #0369a1; } /* sky-700 */
+        .gemini-response-area strong { color: #0369a1; } 
         .gemini-response-area ul { margin-left: 1.25rem; } 
         .gemini-loading-spinner {
             display: inline-block; width: 1rem; height: 1rem; border-radius: 50%;
@@ -201,59 +192,59 @@
 
         /* Title Styling */
         .main-title {
-            font-weight: 800; /* extrabold */
-            letter-spacing: -0.025em; /* tracking-tight */
+            font-weight: 800; 
+            letter-spacing: -0.025em; 
         }
         .title-project {
-            color: #f59e0b; /* amber-500 */
+            color: #f59e0b; 
         }
         .title-marathon {
-            color: #0284c7; /* sky-600 */
+            color: #0284c7; 
         }
         /* Cardiac Drift Styles */
         .time-point-label {
             font-weight: 500;
-            color: #075985; /* sky-800 */
+            color: #075985; 
             padding: 0.5rem 0.75rem;
-            border-radius: 0.375rem; /* 6px */
-            background-color: #e0f2fe; /* sky-100 */
+            border-radius: 0.375rem; 
+            background-color: #e0f2fe; 
             text-align: center;
-            border: 1px solid #7dd3fc; /* sky-300 */
+            border: 1px solid #7dd3fc; 
         }
-        .result-default { color: #374151; } /* gray-700 */
+        .result-default { color: #374151; } 
         .result-blue {
-            background-color: #cfe2ff; /* blue-100 */
+            background-color: #cfe2ff; 
             border-left-width: 4px;
-            border-color: #3b82f6; /* blue-500 */
-            color: #1e3a8a; /* blue-800 */
+            border-color: #3b82f6; 
+            color: #1e3a8a; 
         }
         .result-yellow {
-            background-color: #fef9c3; /* yellow-100 */
+            background-color: #fef9c3; 
             border-left-width: 4px;
-            border-color: #facc15; /* yellow-400 */
-            color: #713f12; /* yellow-800 */
+            border-color: #facc15; 
+            color: #713f12; 
         }
         .result-red {
-            background-color: #fee2e2; /* red-100 */
+            background-color: #fee2e2; 
             border-left-width: 4px;
-            border-color: #f87171; /* red-400 */
-            color: #7f1d1d; /* red-900 */
+            border-color: #f87171; 
+            color: #7f1d1d; 
         }
         .error-display {
-            background-color: #fecaca; /* red-200 */
+            background-color: #fecaca; 
             border-left-width: 4px;
-            border-color: #ef4444; /* red-500 */
-            color: #7f1d1d; /* red-900 */
+            border-color: #ef4444; 
+            color: #7f1d1d; 
         }
         
-        #cardiacDriftAiResponseArea { /* Kept for structure, but AI insights removed */
-            background-color: #f9fafb; /* gray-50 */
-            border: 1px solid #e5e7eb; /* gray-200 */
-            color: #374151; /* gray-700 */
+        #cardiacDriftAiResponseArea { 
+            background-color: #f9fafb; 
+            border: 1px solid #e5e7eb; 
+            color: #374151; 
         }
         .loader {
-            border: 4px solid #f3f3f3; /* Light grey */
-            border-top: 4px solid #3b82f6; /* Blue */
+            border: 4px solid #f3f3f3; 
+            border-top: 4px solid #3b82f6; 
             border-radius: 50%;
             width: 24px;
             height: 24px;
@@ -262,23 +253,23 @@
         }
         /* PDF Button */
         .pdf-button {
-            background-color: #f43f5e; /* rose-500 */
+            background-color: #f43f5e; 
             color: white;
-            padding: 0.25rem 0.5rem; /* py-1 px-2 */
-            font-size: 0.75rem; /* text-xs */
-            border-radius: 9999px; /* rounded-full */
+            padding: 0.25rem 0.5rem; 
+            font-size: 0.75rem; 
+            border-radius: 9999px; 
             font-weight: 500;
             transition: background-color 0.2s;
-            display: inline-flex; /* For icon alignment */
+            display: inline-flex; 
             align-items: center;
-            gap: 0.25rem; /* space-x-1 */
+            gap: 0.25rem; 
         }
         .pdf-button:hover {
-            background-color: #e11d48; /* rose-600 */
+            background-color: #e11d48; 
         }
         .pdf-button svg {
-            width: 0.875rem; /* w-3.5 */
-            height: 0.875rem; /* h-3.5 */
+            width: 0.875rem; 
+            height: 0.875rem; 
         }
 
         /* Print Specific Styles */
@@ -295,17 +286,16 @@
                 left: 0;
                 top: 0;
                 width: 100%;
-                padding: 20px; /* Add some padding for print */
-                background-color: white !important; /* Ensure white background */
+                padding: 20px; 
+                background-color: white !important; 
             }
             .main-container, .content-card {
                 box-shadow: none !important;
                 border: none !important;
             }
             .schedule-table th, .schedule-table td {
-                border: 1px solid #ccc !important; /* Simpler border for print */
+                border: 1px solid #ccc !important; 
             }
-            /* Hide elements not relevant for printing */
             .pdf-button, .nav-button, header, nav, #calendar-controls, .calendar-grid, #pace-utils-content, #todays-training-card, #mileageChart, .chart-container p, #calendar-selected-day-header, #raceDateInputContainer {
                 display: none !important; 
             }
@@ -420,7 +410,7 @@ let currentWebAppUrl = '';
 
 // --- User-Specific Data Sources ---
 const userSpecificDataSources = {
-    "USER_HELIOS": "https://script.google.com/macros/s/AKfycbwcdAtQXpojQk4_jtn4pHoZm2JQihJaYMogcJZJNJLX46ILP0zODpuPyVi0b5n9wLeG7w/exec", // <-- UPDATED URL
+    "USER_HELIOS": "https://script.google.com/macros/s/AKfycbwcdAtQXpojQk4_jtn4pHoZm2JQihJaYMogcJZJNJLX46ILP0zODpuPyVi0b5n9wLeG7w/exec", 
     "USER_APOLLO": "YOUR_APPS_SCRIPT_URL_FOR_APOLLO_SHEET_HERE",
 };
 
@@ -731,15 +721,12 @@ function calculateAndStoreDatedTrainingPlan(raceDateInput) {
 function renderTodayPaces(lt2PaceString) {
     const zonesContainer = document.getElementById('today-zones-content');
     const repeatsContainer = document.getElementById('today-repeats-content');
-    // const lt2Input = document.getElementById('todayLt2SpeedInput'); // LT2 input display removed
 
-    if (!zonesContainer || !repeatsContainer ) { // Removed lt2Input from check
+    if (!zonesContainer || !repeatsContainer ) { 
         console.error("Missing elements for today's pace display.");
         if(zonesContainer) zonesContainer.innerHTML = `<p class="text-xs text-red-500 italic">UI error for pace display.</p>`;
         return;
     }
-
-    // lt2Input.value = lt2PaceString || "N/A"; // No longer displaying LT2 speed here
 
     if (!lt2PaceString || lt2PaceString === "N/A") {
         zonesContainer.innerHTML = `<p class="text-xs text-stone-500 italic">Set Default LT2 Speed in Settings sheet to see paces.</p>`;
@@ -762,12 +749,24 @@ function renderTodayPaces(lt2PaceString) {
         { name: "Z4", descriptor: "Threshold", lowPaceFactor: 1.00, highPaceFactor: 0.91, colorClass: "text-amber-500" },
         { name: "Z5", descriptor: "VO2 Max", lowPaceFactor: 0.90, highPaceFactor: 0.83, colorClass: "text-red-600" }
     ];
-    let zonesTableHtml = `<table class="today-pace-table"><thead><tr><th>Zone</th><th>Pace/km</th></tr></thead><tbody>`;
+    let zonesTableHtml = `<table class="today-pace-table"><thead><tr>
+                            <th class="text-black">Zone</th>
+                            <th class="text-black">Pace</th>
+                            <th class="text-blue-600">Low</th>
+                            <th class="text-green-600">Average</th>
+                            <th class="text-red-600">High</th>
+                          </tr></thead><tbody>`;
     zonesData.forEach(zone => {
-        const sPS = lt2SpeedInSeconds * zone.lowPaceFactor; // Slower pace (larger number)
-        const fPS = lt2SpeedInSeconds * zone.highPaceFactor; // Faster pace (smaller number)
-        // Display reverted: SLOWER - FASTER
-        zonesTableHtml += `<tr><td class="${zone.colorClass} font-semibold">${zone.name}</td><td>${formatSecondsToPace(sPS)} - ${formatSecondsToPace(fPS)}</td></tr>`;
+        const sPS = lt2SpeedInSeconds * zone.lowPaceFactor; 
+        const fPS = lt2SpeedInSeconds * zone.highPaceFactor; 
+        const avgPS = (sPS + fPS) / 2;
+        zonesTableHtml += `<tr>
+                             <td class="${zone.colorClass} font-semibold">${zone.name}</td>
+                             <td>${formatSecondsToPace(sPS)} - ${formatSecondsToPace(fPS)}</td>
+                             <td>${formatSecondsToPace(sPS)}</td>
+                             <td>${formatSecondsToPace(avgPS)}</td>
+                             <td>${formatSecondsToPace(fPS)}</td>
+                           </tr>`;
     });
     zonesTableHtml += `</tbody></table>`;
     zonesContainer.innerHTML = zonesTableHtml;
@@ -812,13 +811,11 @@ function renderTodaysTraining() {
     });
     
     let activityContentHtml = '';
-    // Updated title and date display
     let titleHtml = `<h3 class="text-xl font-semibold text-sky-700 mb-1 text-center">Today</h3>
                      <p class="text-xs text-stone-500 text-center mb-3">${formatDate(today, { weekday: 'long', month: 'long', day: 'numeric' })}</p>`;
 
     if (todaysActivity) {
         let activityText = todaysActivity.activity.replace(/^[^:]+:\s*/, '');
-        // Activity text is now bold within the box
         activityContentHtml = `
             <div class="todays-activity-box">
                 <p><strong>${activityText}</strong></p> 
@@ -830,7 +827,6 @@ function renderTodaysTraining() {
         activityContentHtml = `<div class="todays-activity-box"><p class="text-stone-700">No training scheduled for today based on race date (${formatDate(currentRaceDate)}), or outside plan duration.</p><p class="text-sm text-stone-600">This might be rest or before/after plan.</p></div>`;
     }
     
-    // Container for LT2 speed and pace tables (LT2 input removed)
     const paceCalculatorHtml = `
         <div id="today-zones-content" class="mt-4"></div>
         <div id="today-repeats-content" class="mt-1"></div>
@@ -912,10 +908,10 @@ function renderThisWeeksPlan() {
 
         container.innerHTML = `
             <div class="flex items-center mb-2">
-                <div class="flex-grow text-center">
+                <div class="flex-grow text-center"> 
                      <h3 class="text-lg font-semibold text-green-700">${thisWeeksPlanTitle}</h3>
                 </div>
-                <button id="printWeekPdfBtn" class="pdf-button ml-auto">
+                <button id="printWeekPdfBtn" class="pdf-button ml-auto"> 
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M5 2.5A2.5 2.5 0 0 1 7.5 0h5A2.5 2.5 0 0 1 15 2.5V5h-2.55a3 3 0 0 0-4.9 0H5V2.5zM10 6a2 2 0 0 0-1.936 1.5H5V15a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7.5h-3.064A2 2 0 0 0 10 6zm0 2a.75.75 0 0 1 .75.75v.032l1.533.306a.75.75 0 0 1-.293 1.455l-1.68-.335a.75.75 0 0 1-.59-.518L9.25 8.75A.75.75 0 0 1 10 8z" clip-rule="evenodd" /></svg>
                     PDF
                 </button>
@@ -1448,11 +1444,11 @@ function calculatePacesFromUtil() {
     zonesTable.innerHTML = `<thead><tr><th class="p-2">Zone</th><th class="p-2">Pace/km</th></tr></thead><tbody></tbody>`;
     const zonesTbody = zonesTable.querySelector('tbody');
     [...zonesData, racePaceInfo].forEach(zone => {
-        const sPS = lt2SpeedInSeconds*zone.lowPaceFactor; // Slower pace (larger number)
-        const fPS = lt2SpeedInSeconds*zone.highPaceFactor; // Faster pace (smaller number)
+        const sPS = lt2SpeedInSeconds*zone.lowPaceFactor; 
+        const fPS = lt2SpeedInSeconds*zone.highPaceFactor; 
         const row = zonesTbody.insertRow();
         row.insertCell().innerHTML = `<strong class="${zone.colorClass}">${zone.name} ${zone.descriptor?'['+zone.descriptor+']':''}</strong>`;
-        row.insertCell().textContent = `${formatSecondsToPace(sPS)} - ${formatSecondsToPace(fPS)}`; // SLOWER - FASTER
+        row.insertCell().textContent = `${formatSecondsToPace(sPS)} - ${formatSecondsToPace(fPS)}`; 
     });
     zonesContentDiv.appendChild(zonesTable);
     zonesContentDiv.insertAdjacentHTML('beforeend', '<p class="text-xs text-stone-500 mt-2">Estimates. Adjust to feel.</p>');
