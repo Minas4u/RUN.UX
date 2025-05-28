@@ -340,6 +340,52 @@
             font-size: 1.125rem; /* text-lg */
             line-height: 1.6; 
         }
+        .todays-weekly-notes-box {
+            border: 1px solid #e5e7eb; /* stone-200 */
+            background-color: #f9fafb; /* stone-50, slightly different from activity box */
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            margin-top: 0.5rem; /* mt-2 */
+        }
+
+
+        /* Mobile Calendar Compact Styles */
+        @media (max-width: 639px) { /* sm breakpoint or adjust as needed */
+            .calendar-day {
+                min-height: 40px; /* More compact */
+                padding: 0.25rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+            .calendar-day .day-number {
+                font-size: 0.875rem; /* Slightly larger for visibility in small box */
+                margin-bottom: 0;
+                /* Centering is handled by flex on parent .calendar-day */
+            }
+            .calendar-day .activity-thumbnail {
+                display: none; /* Hide text thumbnail on mobile */
+            }
+            /* Apply background colors directly to the day cell for mobile */
+            .calendar-day.activity-thumbnail-easy { background-color: #e0f2fe; color: #0c4a6e !important; }
+            .calendar-day.activity-thumbnail-tempo { background-color: #ffedd5; color: #c2410c !important; }
+            .calendar-day.activity-thumbnail-interval { background-color: #fee2e2; color: #b91c1c !important; }
+            .calendar-day.activity-thumbnail-long { background-color: #f3e8ff; color: #7e22ce !important; }
+            .calendar-day.activity-thumbnail-race { background-color: #fce7f3; color: #be185d !important; }
+            .calendar-day.activity-thumbnail-rest { background-color: #f1f5f9; color: #475569 !important; }
+            .calendar-day.activity-thumbnail-default { background-color: #e0f2fe; color: #0c4a6e !important; }
+            
+            .calendar-day.is-today .day-number { /* Ensure today's number is visible over colored background */
+                color: #065f46; /* emerald-800 or a contrasting color */
+            }
+             .calendar-day.has-activity .day-number { /* Ensure day number is visible on colored cells */
+                mix-blend-mode: difference; /* This can help with contrast but test thoroughly */
+                filter: invert(1) grayscale(1) contrast(100); /* Another way to make text visible */
+                 /* Alternatively, set a specific high-contrast color if mix-blend-mode is problematic */
+                 /* color: white; */ 
+            }
+        }
 
 
     </style>
@@ -592,9 +638,8 @@ async function fetchMarathonPlan(webAppUrlToUse) {
             localStorage.setItem('marathonRaceDate', DEFAULT_RACE_DATE_STRING);
         }
         calculateAndStoreDatedTrainingPlan(currentRaceDate);
-        // Initialize calendar to current actual month
         calendarCurrentDisplayDate = new Date(); 
-        calendarCurrentDisplayDate.setDate(1); // Set to the first day of the current month
+        calendarCurrentDisplayDate.setDate(1); 
         return true;
     } catch (error) {
         console.error('Failed to fetch marathon plan:', error);
@@ -769,7 +814,7 @@ function renderTodayPaces(lt2PaceString) {
         {d:"3km",f:1.02,m:3},{d:"1 Mile",f:0.98,m:1.60934},{d:"1km",f:0.95,m:1},
         {d:"800m",f:0.92,m:0.8},{d:"400m",f:0.88,m:0.4},{d:"200m",f:0.85,m:0.2}
     ];
-    let repeatsTableHtml = `<table class="today-pace-table mt-2"><thead><tr><th>Dist.</th><th>Time</th><th>Pace/km</th></tr></thead><tbody>`;
+    let repeatsTableHtml = `<table class="today-pace-table mt-2"><thead><tr><th>Dist.</th><th>Time</th><th>Pace/km</th></tr></thead><tbody></tbody>`;
     repeatDistances.forEach(item => {
         const tPPS = lt2SpeedInSeconds * item.f;
         const tTDS = tPPS * item.m;
@@ -804,16 +849,24 @@ function renderTodaysTraining() {
     let activityContentHtml = '';
     let titleHtml = `<h3 class="text-xl font-semibold text-sky-700 mb-1 text-center">Today</h3>
                      <p class="text-xs text-stone-500 text-center mb-3">${formatDate(today, { weekday: 'long', month: 'long', day: 'numeric' })}</p>`;
+    let notesBoxHtml = '';
+
 
     if (todaysActivity) {
         let activityText = todaysActivity.activity.replace(/^[^:]+:\s*/, '');
         activityContentHtml = `
             <div class="todays-activity-box">
                 <p><strong>${activityText}</strong></p> 
-                ${todaysActivity.notes ? `<p class="text-sm italic mt-1"><strong class="text-stone-600">Weekly Notes:</strong> <span class="text-stone-800">${todaysActivity.notes}</span></p>` : ''}
                 <p class="text-xs text-stone-500 mt-1">Phase: ${todaysActivity.phaseName} | Week: ${todaysActivity.weekNum}</p>
             </div>
         `;
+        if (todaysActivity.notes) {
+            notesBoxHtml = `
+                <div class="todays-weekly-notes-box">
+                    <p class="text-sm italic"><strong class="text-black text-xs">Weekly Notes:</strong> <span class="text-stone-800 text-sm">${todaysActivity.notes}</span></p>
+                </div>
+            `;
+        }
     } else {
         activityContentHtml = `<div class="todays-activity-box"><p class="text-stone-700">No training scheduled for today based on race date (${formatDate(currentRaceDate)}), or outside plan duration.</p><p class="text-sm text-stone-600">This might be rest or before/after plan.</p></div>`;
     }
@@ -823,7 +876,7 @@ function renderTodaysTraining() {
         <div id="today-repeats-content" class="mt-1"></div>
     `;
     
-    container.innerHTML = titleHtml + activityContentHtml + paceCalculatorHtml;
+    container.innerHTML = titleHtml + activityContentHtml + notesBoxHtml + paceCalculatorHtml;
 
     if (marathonPlan && marathonPlan.settings) {
         renderTodayPaces(marathonPlan.settings.defaultLt2Speed);
@@ -921,7 +974,7 @@ function renderThisWeeksPlan() {
                         </tbody>
                     </table>
                 </div>
-                ${weekNotes ? `<p class="text-sm italic mt-3 p-3 bg-stone-100 rounded-md"><strong class="text-stone-600">Weekly Notes:</strong> <span class="text-stone-800">${weekNotes}</span></p>` : ''}
+                ${weekNotes ? `<p class="text-sm italic mt-3 p-3 bg-stone-100 rounded-md"><strong class="text-black text-xs">Weekly Notes:</strong> <span class="text-stone-800 text-sm">${weekNotes}</span></p>` : ''}
             </div>
         `;
         const pdfBtn = document.getElementById('printWeekPdfBtn');
@@ -1204,7 +1257,7 @@ function renderWeekDetails(phaseIndex, weekIndex) {
                     <tbody class="divide-y divide-stone-200">${tableRowsHtml}</tbody>
                 </table>
             </div>
-            ${week.notes ? `<p class="text-sm italic mt-3 p-3 bg-stone-100 rounded-md"><strong class="text-stone-600">Notes:</strong> <span class="text-stone-800">${week.notes}</span></p>` : ''}
+            ${week.notes ? `<p class="text-sm italic mt-3 p-3 bg-stone-100 rounded-md"><strong class="text-black text-xs">Weekly Notes:</strong> <span class="text-stone-800 text-sm">${week.notes}</span></p>` : ''}
         </div>`;
 }
 
@@ -1263,7 +1316,7 @@ function renderCalendarTab() {
     document.getElementById('prevMonthBtn').addEventListener('click', () => { calendarCurrentDisplayDate.setMonth(calendarCurrentDisplayDate.getMonth() - 1); renderCalendarGrid(); document.getElementById('calendar-day-details-content').innerHTML = ''; document.getElementById('calendar-selected-day-header').innerHTML = ''; });
     document.getElementById('nextMonthBtn').addEventListener('click', () => { calendarCurrentDisplayDate.setMonth(calendarCurrentDisplayDate.getMonth() + 1); renderCalendarGrid(); document.getElementById('calendar-day-details-content').innerHTML = ''; document.getElementById('calendar-selected-day-header').innerHTML = ''; });
     renderCalendarGrid();
-    renderSelectedCalendarDayDetails(new Date()); // Show today's details by default
+    renderSelectedCalendarDayDetails(new Date()); 
 }
 
 function renderCalendarGrid() {
@@ -1292,8 +1345,9 @@ function renderCalendarGrid() {
         let activityHtml = '';
         if (activityForDay) {
             cell.classList.add('has-activity');
-            cell.addEventListener('click', () => renderSelectedCalendarDayDetails(currentDateInLoop));
             let activityText = activityForDay.activity.replace(/^[^:]+:\s*/, '');
+            cell.classList.add(getActivityThumbnailClass(activityText)); // Add class for mobile background
+            cell.addEventListener('click', () => renderSelectedCalendarDayDetails(currentDateInLoop));
             activityHtml = `<span class="activity-thumbnail ${getActivityThumbnailClass(activityText)}">${activityText.substring(0,12)}${activityText.length > 12 ? '...' : ''}</span>`;
         }
         cell.innerHTML = `<span class="day-number">${day}</span>` + activityHtml;
@@ -1323,7 +1377,7 @@ function renderSelectedCalendarDayDetails(date) {
                     <span class="text-amber-500">${activityText}</span>
                 </p>
                 <p class="text-xs text-stone-500 mb-1">Phase: ${activityDetails.phaseName} | Week: ${activityDetails.weekNum}</p>
-                ${activityDetails.notes ? `<p class="text-sm italic mt-1"><strong class="text-stone-600">Weekly Notes:</strong> <span class="text-stone-800">${activityDetails.notes}</span></p>` : ''}
+                ${activityDetails.notes ? `<p class="text-sm italic mt-1"><strong class="text-black text-xs">Weekly Notes:</strong> <span class="text-stone-800 text-sm">${activityDetails.notes}</span></p>` : ''}
             </div>`;
     } else {
         detailsContainer.innerHTML = `
