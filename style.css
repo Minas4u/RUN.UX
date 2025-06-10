@@ -1,0 +1,1359 @@
+:root {
+    --body-bg: #f0f4f8;
+    --text-color: #1e293b;
+    --main-container-bg: #ffffff;
+    --main-container-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --nav-button-hover-bg: #f3f4f6;
+    --nav-button-hover-text: #1f2937;
+    --nav-button-active-overview-bg: #0284c7;
+    --nav-button-active-overview-text: white;
+    --nav-button-active-overview-hover-bg: #0369a1;
+    --nav-button-active-plan-bg: #f59e0b;
+    --nav-button-active-plan-text: white;
+    --nav-button-active-plan-hover-bg: #d97706;
+    --nav-button-active-calendar-bg: #059669;
+    --nav-button-active-calendar-text: white;
+    --nav-button-active-calendar-hover-bg: #047857;
+    --nav-button-active-race-bg: #7c3aed;
+    --nav-button-active-race-text: white;
+    --nav-button-active-race-hover-bg: #6d28d9;
+    --nav-button-active-info-bg: #6366f1;
+    --nav-button-active-info-text: white;
+    --nav-button-active-info-hover-bg: #4f46e5;
+    --nav-button-active-companion-bg: #10b981;
+    --nav-button-active-companion-text: white;
+    --nav-button-active-companion-hover-bg: #047857;
+
+    --phase-button-preseason-border: #d1d5db;
+    --phase-button-preseason-text: #4b5563;
+    --phase-button-preseason-hover-bg: #f3f4f6;
+    --phase-button-preseason-active-bg: #6b7280;
+    --phase-button-preseason-active-text: white;
+    --phase-button-preseason-active-border: #6b7280;
+
+    --phase-button-base-border: #0ea5e9;
+    --phase-button-base-text: #0369a1;
+    --phase-button-base-hover-bg: #e0f2fe;
+    --phase-button-base-active-bg: #0ea5e9;
+    --phase-button-base-active-text: white;
+
+    --phase-button-specific-border: #10b981;
+    --phase-button-specific-text: #047857;
+    --phase-button-specific-hover-bg: #d1fae5;
+    --phase-button-specific-active-bg: #059669;
+    --phase-button-specific-active-text: white;
+    --phase-button-specific-active-border: #059669;
+
+    --phase-button-taper-border: #ef4444;
+    --phase-button-taper-text: #b91c1c;
+    --phase-button-taper-hover-bg: #fee2e2;
+    --phase-button-taper-active-bg: #dc2626;
+    --phase-button-taper-active-text: white;
+    --phase-button-taper-active-border: #dc2626;
+
+    --week-button-border: #9ca3af;
+    --week-button-active-bg: #0284c7;
+    --week-button-active-text: white;
+    --week-button-active-border: #0284c7;
+
+    --week-button-preseason-text: #4b5563;
+    --week-button-preseason-hover-bg: #f3f4f6;
+    --week-button-preseason-hover-border: #9ca3af;
+    --week-button-base-text: #0369a1;
+    --week-button-base-hover-bg: #e0f2fe;
+    --week-button-base-hover-border: #7dd3fc;
+    --week-button-specific-text: #047857;
+    --week-button-specific-hover-bg: #d1fae5;
+    --week-button-specific-hover-border: #6ee7b7;
+    --week-button-taper-text: #b91c1c;
+    --week-button-taper-hover-bg: #fee2e2;
+    --week-button-taper-hover-border: #fca5a5;
+
+    --content-card-bg: #fafaf9;
+    --overview-section-card-border-l: #0284c7;
+    --overview-section-card-border-b: #f59e0b;
+    --news-section-card-border-l: #4f46e5;
+    --news-section-card-border-b: #059669;
+    --race-section-card-border-l: #7c3aed;
+    --race-section-card-border-b: #db2777;
+
+    --table-border: #d1d5db;
+    --table-th-bg: #f3f4f6;
+    --schedule-table-border: #e5e7eb;
+    --schedule-table-th-bg: #f9fafb;
+    --schedule-table-th-text: #374151;
+
+    --input-userid-border: #f59e0b;
+    --input-userid-focus-border: #d97706;
+    --input-userid-focus-shadow: rgba(245, 158, 11, 0.3);
+    --label-userid-border-l: #0284c7;
+    --input-focus-border: #0ea5e9;
+    --input-focus-shadow: rgba(14, 165, 233, 0.3);
+
+    --logo-d-text: #0284c7;
+    --logo-n-gradient-start: #0284c7;
+    --logo-n-gradient-end: #f59e0b;
+    --logo-a-text: #f59e0b;
+    --logo-border-top: #f59e0b;
+    --logo-border-right: #0284c7;
+    --logo-border-bottom: #0284c7;
+    --logo-border-left: #f59e0b;
+
+    --scrollbar-track-bg: #f1f1f1;
+    --scrollbar-thumb-bg: #cbd5e1;
+    --scrollbar-thumb-hover-bg: #94a3b8;
+
+    --loading-message-text: #0369a1;
+    --error-message-text: #dc2626;
+    --error-message-bg: #fee2e2;
+    --error-message-border: #f87171;
+
+    --install-pwa-button-bg: #0284c7;
+    --install-pwa-button-text: white;
+    --install-pwa-button-border: #f59e0b;
+    --install-pwa-button-hover-bg: #0369a1;
+    --install-pwa-button-hover-border: #d97706;
+
+    --calendar-grid-bg: #e5e7eb;
+    --calendar-grid-border: #e5e7eb;
+    --calendar-header-bg: #e0e7ff;
+    --calendar-header-text: #3730a3;
+    --calendar-header-border: #c7d2fe;
+    --calendar-day-bg: #fff;
+    --calendar-day-border: #f3f4f6;
+    --calendar-day-hover-bg: #f0f9ff;
+    --calendar-day-other-month-bg: #f9fafb;
+    --calendar-day-other-month-text: #9ca3af;
+    --calendar-day-today-bg: #ecfdf5;
+    --calendar-day-today-border: #10b981;
+
+    --activity-thumb-easy-bg: #e0f2fe; --activity-thumb-easy-text: #0c4a6e;
+    --activity-thumb-easy-green-bg: #dcfce7; --activity-thumb-easy-green-text: #15803d;
+    --activity-thumb-fartlek-bg: #fee2e2; --activity-thumb-fartlek-text: #b91c1c;
+    --activity-thumb-tempo-bg: #ffedd5; --activity-thumb-tempo-text: #c2410c;
+    --activity-thumb-interval-bg: #fecaca; --activity-thumb-interval-text: #991b1b;
+    --activity-thumb-long-bg: #f3e8ff; --activity-thumb-long-text: #7e22ce;
+    --activity-thumb-race-bg: #fce7f3; --activity-thumb-race-text: #be185d;
+    --activity-thumb-rest-bg: #f1f5f9; --activity-thumb-rest-text: #475569;
+    --activity-thumb-default-bg: #e0f2fe; --activity-thumb-default-text: #0c4a6e;
+
+    --custom-rect-nav-border-t: #f59e0b;
+    --custom-rect-nav-border-r: #0284c7;
+    --custom-rect-nav-border-b: #0284c7;
+    --custom-rect-nav-border-l: #f59e0b;
+
+    --custom-rect-today-border-t: #f59e0b;
+    --custom-rect-today-border-r: #0284c7;
+    --custom-rect-today-border-b: #0284c7;
+    --custom-rect-today-border-l: #f59e0b;
+
+    --custom-rect-this-week-border-t: #15803d;
+    --custom-rect-this-week-border-l: #15803d;
+    --custom-rect-this-week-border-b: #dc2626;
+    --custom-rect-this-week-border-r: #dc2626;
+
+    --title-project-text: #f59e0b;
+    --title-marathon-text: #0284c7;
+
+    --loader-border: #f3f3f3;
+    --loader-border-top: #3b82f6;
+    --pdf-button-bg: #f43f5e;
+    --pdf-button-text: white;
+    --pdf-button-hover-bg: #e11d48;
+    --calendar-nav-button-bg: #0284c7;
+    --calendar-nav-button-text: white;
+    --calendar-nav-button-hover-bg: #0369a1;
+
+    --toggle-button-bg: #0284c7;
+    --toggle-button-text: white;
+    --toggle-button-border: #f59e0b;
+    --toggle-button-hover-bg: #0369a1;
+    --toggle-button-hover-border: #d97706;
+
+    --activity-text-easy: #16a34a;
+    --activity-text-recovery: #075985;
+    --activity-text-base: #1e40af;
+    --activity-text-tempo: #b45309;
+    --activity-text-interval: #991b1b;
+    --activity-text-fartlek: #831843;
+    --activity-text-str-hills: #713f12;
+    --activity-text-rest: #374151;
+    --activity-text-zone-race: #5b21b6;
+    --activity-text-double: #78350f;
+    --activity-text-mobility: #713f12;
+
+    --highlight-zone-pace-bg: #f59e0b;
+    --highlight-zone-pace-text: #1e293b;
+
+    --companion-nav-button-hover-bg: #f3f4f6;
+    --companion-nav-button-hover-text: #1f2937;
+    --companion-nav-button-active-drills-bg: #059669;
+    --companion-nav-button-active-drills-text: white;
+    --companion-nav-button-active-mobility-bg: #0ea5e9;
+    --companion-nav-button-active-mobility-text: white;
+    --companion-nav-button-active-strength-bg: #f59e0b;
+    --companion-nav-button-active-strength-text: white;
+
+    --exercise-card-bg: #fff;
+    --exercise-card-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    --exercise-card-hover-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+    --details-drills-bg: #dcfce7; --details-drills-text: #166534;
+    --details-mobility-bg: #e0f2fe; --details-mobility-text: #075985;
+    --details-strength-bg: #fef3c7; --details-strength-text: #92400e;
+    --video-link-text: #0ea5e9;
+    --video-link-hover-text: #0284c7;
+    --updates-card-border-l: #6366f1;
+
+    --updates-modal-bg: #f8fafc;
+    --updates-modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --updates-modal-header-gradient-start: #4f46e5;
+    --updates-modal-header-gradient-end: #7c3aed;
+    --updates-modal-close-text: #9ca3af;
+    --updates-modal-close-bg: #f3f4f6;
+    --updates-modal-close-hover-text: #1f2937;
+    --updates-modal-close-hover-bg: #e5e7eb;
+    --updates-modal-card-bg: #ffffff;
+    --updates-modal-card-border-l: #6366f1;
+
+    --print-body-bg: white;
+    --print-text: black;
+    --print-table-border: #cccccc;
+    --print-table-th-bg: #f0f0f0;
+    --print-notes-border: #dddddd;
+
+    --today-pace-table-border: #000000;
+    --today-pace-table-th-bg: #f3f4f6;
+    --today-pace-table-th-text: #1f2937;
+    --today-pace-table-header-low: #2563eb;
+    --today-pace-table-header-average: #16a34a;
+    --today-pace-table-header-high: #dc2626;
+
+    --todays-activity-box-border: #e5e7eb;
+    --todays-activity-box-bg: #ffffff;
+    --todays-activity-text-default: #0369a1;
+    --todays-weekly-notes-box-border: #e5e7eb;
+    --todays-weekly-notes-box-bg: #f9fafb;
+
+    --mobile-calendar-day-fartlek-bg: #ffd9d9; --mobile-calendar-day-fartlek-text: #990000;
+    --mobile-calendar-day-easy-green-bg: #d9ffd9; --mobile-calendar-day-easy-green-text: #006400;
+    --mobile-calendar-day-interval-bg: #fee2e2; --mobile-calendar-day-interval-text: #b91c1c;
+    --mobile-calendar-day-easy-bg: #e0f2fe; --mobile-calendar-day-easy-text: #0c4a6e;
+    --mobile-calendar-day-tempo-bg: #ffedd5; --mobile-calendar-day-tempo-text: #c2410c;
+    --mobile-calendar-day-long-bg: #f3e8ff; --mobile-calendar-day-long-text: #7e22ce;
+    --mobile-calendar-day-race-bg: #fce7f3; --mobile-calendar-day-race-text: #be185d;
+    --mobile-calendar-day-rest-bg: #f1f5f9; --mobile-calendar-day-rest-text: #475569;
+    --mobile-calendar-day-default-bg: #e0f2fe; --mobile-calendar-day-default-text: #0c4a6e;
+    --mobile-calendar-day-today-number-text: #065f46;
+
+    /* Dark Mode Variables */
+    --dm-body-bg: #111827; /* gray-900 */
+    --dm-text-color: #f3f4f6; /* gray-100 */
+    --dm-main-container-bg: #1f2937; /* gray-800 */
+    --dm-main-container-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --dm-nav-button-hover-bg: #374151; /* gray-700 */
+    --dm-nav-button-hover-text: #f3f4f6; /* gray-100 */
+    --dm-content-card-bg: #374151; /* gray-700 */
+    --dm-table-border: #4b5563; /* gray-600 */
+    --dm-table-th-bg: #1f2937; /* gray-800 */
+    --dm-schedule-table-border: #4b5563; /* gray-600 */
+    --dm-schedule-table-th-bg: #1f2937; /* gray-800 */
+    --dm-schedule-table-th-text: #e5e7eb; /* gray-200 for slightly better brightness */
+    --dm-input-userid-border: #f59e0b;
+    --dm-input-userid-focus-border: #d97706;
+    --dm-input-userid-focus-shadow: rgba(245, 158, 11, 0.4);
+    --dm-input-focus-border: #0ea5e9;
+    --dm-input-focus-shadow: rgba(14, 165, 233, 0.4);
+    --dm-scrollbar-track-bg: #1f2937; /* gray-800 */
+    --dm-scrollbar-thumb-bg: #4b5563; /* gray-600 */
+    --dm-scrollbar-thumb-hover-bg: #6b7280; /* gray-500 */
+    --dm-loading-message-text: #60a5fa; /* blue-400 */
+    --dm-error-message-text: #f87171; /* red-400 */
+    --dm-error-message-bg: #450a0a; /* red-900 bg, adjust opacity if needed */
+    --dm-error-message-border: #ef4444; /* red-500 */
+    --dm-calendar-grid-bg: #374151; /* gray-700 */
+    --dm-calendar-grid-border: #4b5563; /* gray-600 */
+    --dm-calendar-header-bg: #312e81; /* indigo-900 */
+    --dm-calendar-header-text: #e0e7ff; /* indigo-100 */
+    --dm-calendar-header-border: #4338ca; /* indigo-700 */
+    --dm-calendar-day-bg: #1f2937; /* gray-800 */
+    --dm-calendar-day-border: #374151; /* gray-700 */
+    --dm-calendar-day-hover-bg: #111827; /* gray-900 */
+    --dm-calendar-day-other-month-bg: #111827; /* gray-900 */
+    --dm-calendar-day-other-month-text: #6b7280; /* gray-500 */
+    --dm-calendar-day-today-bg: #064e3b; /* green-800 */
+    --dm-calendar-day-today-border: #10b981; /* green-500 */
+    --dm-activity-thumb-easy-bg: #0c4a6e; --dm-activity-thumb-easy-text: #e0f2fe;
+    --dm-activity-thumb-easy-green-bg: #15803d; --dm-activity-thumb-easy-green-text: #dcfce7;
+    --dm-activity-thumb-fartlek-bg: #b91c1c; --dm-activity-thumb-fartlek-text: #fee2e2;
+    --dm-activity-thumb-tempo-bg: #c2410c; --dm-activity-thumb-tempo-text: #ffedd5;
+    --dm-activity-thumb-interval-bg: #991b1b; --dm-activity-thumb-interval-text: #fecaca;
+    --dm-activity-thumb-long-bg: #7e22ce; --dm-activity-thumb-long-text: #f3e8ff;
+    --dm-activity-thumb-race-bg: #be185d; --dm-activity-thumb-race-text: #fce7f3;
+    --dm-activity-thumb-rest-bg: #475569; --dm-activity-thumb-rest-text: #f1f5f9;
+    --dm-activity-thumb-default-bg: #0c4a6e; --dm-activity-thumb-default-text: #e0f2fe;
+    --dm-title-project-text: #fbbf24; /* amber-400 */
+    --dm-title-marathon-text: #38bdf8; /* sky-400 */
+    --dm-loader-border: #374151; /* gray-700 */
+    --dm-highlight-zone-pace-bg: #f59e0b;
+    --dm-highlight-zone-pace-text: #111827;
+    --dm-exercise-card-bg: #374151; /* gray-700 */
+    --dm-exercise-card-shadow: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2);
+    --dm-exercise-card-hover-shadow: 0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -4px rgba(0,0,0,0.2);
+    --dm-details-drills-bg: #052e16; --dm-details-drills-text: #dcfce7; /* green-900 / green-100 */
+    --dm-details-mobility-bg: #0c546e; --dm-details-mobility-text: #e0f2fe; /* custom darker blue / light blue */
+    --dm-details-strength-bg: #78350f; --dm-details-strength-text: #fef3c7; /* amber-900 / amber-100 */
+    --dm-video-link-text: #38bdf8; /* sky-400 */
+    --dm-video-link-hover-text: #7dd3fc; /* sky-300 */
+    --dm-updates-modal-bg: #1f2937; /* gray-800 */
+    --dm-updates-modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    --dm-updates-modal-header-gradient-start: #818cf8; /* indigo-300 */
+    --dm-updates-modal-header-gradient-end: #c084fc; /* purple-300 */
+    --dm-updates-modal-close-text: #9ca3af; /* gray-400 */
+    --dm-updates-modal-close-bg: #374151; /* gray-700 */
+    --dm-updates-modal-close-hover-text: #f3f4f6; /* gray-100 */
+    --dm-updates-modal-close-hover-bg: #4b5563; /* gray-600 */
+    --dm-updates-modal-card-bg: #374151; /* gray-700 */
+    --dm-today-pace-table-border: #6b7280; /* gray-500 */
+    --dm-today-pace-table-th-bg: #1f2937; /* gray-800 */
+    --dm-today-pace-table-th-text: #e5e7eb; /* gray-200 for slightly better brightness */
+    --dm-today-pace-table-header-low: #60a5fa; /* blue-400 */
+    --dm-today-pace-table-header-average: #4ade80; /* green-400 */
+    --dm-today-pace-table-header-high: #f87171; /* red-400 */
+    --dm-todays-activity-box-border: #4b5563; /* gray-600 */
+    --dm-todays-activity-box-bg: #1f2937; /* gray-800 */
+    --dm-todays-activity-text-default: #60a5fa; /* blue-400 */
+    --dm-todays-weekly-notes-box-border: #4b5563; /* gray-600 */
+    --dm-todays-weekly-notes-box-bg: #111827; /* gray-900 */
+    --dm-mobile-calendar-day-fartlek-bg: #7f1d1d; --dm-mobile-calendar-day-fartlek-text: #fee2e2;
+    --dm-mobile-calendar-day-easy-green-bg: #064e3b; --dm-mobile-calendar-day-easy-green-text: #dcfce7;
+    --dm-mobile-calendar-day-interval-bg: #7f1d1d; --dm-mobile-calendar-day-interval-text: #fecaca;
+    --dm-mobile-calendar-day-easy-bg: #0c4a6e; --dm-mobile-calendar-day-easy-text: #e0f2fe;
+    --dm-mobile-calendar-day-tempo-bg: #7c2d12; --dm-mobile-calendar-day-tempo-text: #ffedd5;
+    --dm-mobile-calendar-day-long-bg: #581c87; --dm-mobile-calendar-day-long-text: #f3e8ff;
+    --dm-mobile-calendar-day-race-bg: #86198f; --dm-mobile-calendar-day-race-text: #fce7f3;
+    --dm-mobile-calendar-day-rest-bg: #374151; --dm-mobile-calendar-day-rest-text: #f1f5f9;
+    --dm-mobile-calendar-day-default-bg: #0c4a6e; --dm-mobile-calendar-day-default-text: #e0f2fe;
+    --dm-mobile-calendar-day-today-number-text: #a7f3d0; /* green-200 */
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+body.dark-mode {
+    --body-bg: var(--dm-body-bg);
+    --text-color: var(--dm-text-color);
+    --main-container-bg: var(--dm-main-container-bg);
+    --main-container-shadow: var(--dm-main-container-shadow);
+    --nav-button-hover-bg: var(--dm-nav-button-hover-bg);
+    --nav-button-hover-text: var(--dm-nav-button-hover-text);
+    /* Keep active button colors same for dark mode, or define specific dark versions if needed */
+    --content-card-bg: var(--dm-content-card-bg);
+    --table-border: var(--dm-table-border);
+    --table-th-bg: var(--dm-table-th-bg);
+    --schedule-table-border: var(--dm-schedule-table-border);
+    --schedule-table-th-bg: var(--dm-schedule-table-th-bg);
+    --schedule-table-th-text: var(--dm-schedule-table-th-text);
+    --input-userid-border: var(--dm-input-userid-border);
+    --input-userid-focus-border: var(--dm-input-userid-focus-border);
+    --input-userid-focus-shadow: var(--dm-input-userid-focus-shadow);
+    --input-focus-border: var(--dm-input-focus-border);
+    --input-focus-shadow: var(--dm-input-focus-shadow);
+    /* Logo colors could be inverted or kept as brand colors */
+    --scrollbar-track-bg: var(--dm-scrollbar-track-bg);
+    --scrollbar-thumb-bg: var(--dm-scrollbar-thumb-bg);
+    --scrollbar-thumb-hover-bg: var(--dm-scrollbar-thumb-hover-bg);
+    --loading-message-text: var(--dm-loading-message-text);
+    --error-message-text: var(--dm-error-message-text);
+    --error-message-bg: var(--dm-error-message-bg);
+    --error-message-border: var(--dm-error-message-border);
+    --calendar-grid-bg: var(--dm-calendar-grid-bg);
+    --calendar-grid-border: var(--dm-calendar-grid-border);
+    --calendar-header-bg: var(--dm-calendar-header-bg);
+    --calendar-header-text: var(--dm-calendar-header-text);
+    --calendar-header-border: var(--dm-calendar-header-border);
+    --calendar-day-bg: var(--dm-calendar-day-bg);
+    --calendar-day-border: var(--dm-calendar-day-border);
+    --calendar-day-hover-bg: var(--dm-calendar-day-hover-bg);
+    --calendar-day-other-month-bg: var(--dm-calendar-day-other-month-bg);
+    --calendar-day-other-month-text: var(--dm-calendar-day-other-month-text);
+    --calendar-day-today-bg: var(--dm-calendar-day-today-bg);
+    --calendar-day-today-border: var(--dm-calendar-day-today-border);
+    --activity-thumb-easy-bg: var(--dm-activity-thumb-easy-bg); --activity-thumb-easy-text: var(--dm-activity-thumb-easy-text);
+    --activity-thumb-easy-green-bg: var(--dm-activity-thumb-easy-green-bg); --activity-thumb-easy-green-text: var(--dm-activity-thumb-easy-green-text);
+    --activity-thumb-fartlek-bg: var(--dm-activity-thumb-fartlek-bg); --activity-thumb-fartlek-text: var(--dm-activity-thumb-fartlek-text);
+    --activity-thumb-tempo-bg: var(--dm-activity-thumb-tempo-bg); --activity-thumb-tempo-text: var(--dm-activity-thumb-tempo-text);
+    --activity-thumb-interval-bg: var(--dm-activity-thumb-interval-bg); --activity-thumb-interval-text: var(--dm-activity-thumb-interval-text);
+    --activity-thumb-long-bg: var(--dm-activity-thumb-long-bg); --activity-thumb-long-text: var(--dm-activity-thumb-long-text);
+    --activity-thumb-race-bg: var(--dm-activity-thumb-race-bg); --activity-thumb-race-text: var(--dm-activity-thumb-race-text);
+    --activity-thumb-rest-bg: var(--dm-activity-thumb-rest-bg); --activity-thumb-rest-text: var(--dm-activity-thumb-rest-text);
+    --activity-thumb-default-bg: var(--dm-activity-thumb-default-bg); --activity-thumb-default-text: var(--dm-activity-thumb-default-text);
+    --title-project-text: var(--dm-title-project-text);
+    --title-marathon-text: var(--dm-title-marathon-text);
+    --loader-border: var(--dm-loader-border);
+    --highlight-zone-pace-bg: var(--dm-highlight-zone-pace-bg);
+    --highlight-zone-pace-text: var(--dm-highlight-zone-pace-text);
+    --exercise-card-bg: var(--dm-exercise-card-bg);
+    --exercise-card-shadow: var(--dm-exercise-card-shadow);
+    --exercise-card-hover-shadow: var(--dm-exercise-card-hover-shadow);
+    --details-drills-bg: var(--dm-details-drills-bg); --details-drills-text: var(--dm-details-drills-text);
+    --details-mobility-bg: var(--dm-details-mobility-bg); --details-mobility-text: var(--dm-details-mobility-text);
+    --details-strength-bg: var(--dm-details-strength-bg); --details-strength-text: var(--dm-details-strength-text);
+    --video-link-text: var(--dm-video-link-text);
+    --video-link-hover-text: var(--dm-video-link-hover-text);
+    --updates-modal-bg: var(--dm-updates-modal-bg);
+    --updates-modal-shadow: var(--dm-updates-modal-shadow);
+    --updates-modal-header-gradient-start: var(--dm-updates-modal-header-gradient-start);
+    --updates-modal-header-gradient-end: var(--dm-updates-modal-header-gradient-end);
+    --updates-modal-close-text: var(--dm-updates-modal-close-text);
+    --updates-modal-close-bg: var(--dm-updates-modal-close-bg);
+    --updates-modal-close-hover-text: var(--dm-updates-modal-close-hover-text);
+    --updates-modal-close-hover-bg: var(--dm-updates-modal-close-hover-bg);
+    --updates-modal-card-bg: var(--dm-updates-modal-card-bg);
+    --today-pace-table-border: var(--dm-today-pace-table-border);
+    --today-pace-table-th-bg: var(--dm-today-pace-table-th-bg);
+    --today-pace-table-th-text: var(--dm-today-pace-table-th-text);
+    --today-pace-table-header-low: var(--dm-today-pace-table-header-low);
+    --today-pace-table-header-average: var(--dm-today-pace-table-header-average);
+    --today-pace-table-header-high: var(--dm-today-pace-table-header-high);
+    --todays-activity-box-border: var(--dm-todays-activity-box-border);
+    --todays-activity-box-bg: var(--dm-todays-activity-box-bg);
+    --todays-activity-text-default: var(--dm-todays-activity-text-default);
+    --todays-weekly-notes-box-border: var(--dm-todays-weekly-notes-box-border);
+    --todays-weekly-notes-box-bg: var(--dm-todays-weekly-notes-box-bg);
+    --mobile-calendar-day-fartlek-bg: var(--dm-mobile-calendar-day-fartlek-bg); --mobile-calendar-day-fartlek-text: var(--dm-mobile-calendar-day-fartlek-text);
+    --mobile-calendar-day-easy-green-bg: var(--dm-mobile-calendar-day-easy-green-bg); --mobile-calendar-day-easy-green-text: var(--dm-mobile-calendar-day-easy-green-text);
+    --mobile-calendar-day-interval-bg: var(--dm-mobile-calendar-day-interval-bg); --mobile-calendar-day-interval-text: var(--dm-mobile-calendar-day-interval-text);
+    --mobile-calendar-day-easy-bg: var(--dm-mobile-calendar-day-easy-bg); --mobile-calendar-day-easy-text: var(--dm-mobile-calendar-day-easy-text);
+    --mobile-calendar-day-tempo-bg: var(--dm-mobile-calendar-day-tempo-bg); --mobile-calendar-day-tempo-text: var(--dm-mobile-calendar-day-tempo-text);
+    --mobile-calendar-day-long-bg: var(--dm-mobile-calendar-day-long-bg); --mobile-calendar-day-long-text: var(--dm-mobile-calendar-day-long-text);
+    --mobile-calendar-day-race-bg: var(--dm-mobile-calendar-day-race-bg); --mobile-calendar-day-race-text: var(--dm-mobile-calendar-day-race-text);
+    --mobile-calendar-day-rest-bg: var(--dm-mobile-calendar-day-rest-bg); --mobile-calendar-day-rest-text: var(--dm-mobile-calendar-day-rest-text);
+    --mobile-calendar-day-default-bg: var(--dm-mobile-calendar-day-default-bg); --mobile-calendar-day-default-text: var(--dm-mobile-calendar-day-default-text);
+    --mobile-calendar-day-today-number-text: var(--dm-mobile-calendar-day-today-number-text);
+
+    /* Specific overrides for dark mode if color variables are not enough */
+    /* Example: Invert logo colors or change border styles for specific components */
+    --logo-d-text: var(--dm-title-marathon-text);
+    --logo-n-gradient-start: var(--dm-title-marathon-text);
+    --logo-n-gradient-end: var(--dm-title-project-text);
+    --logo-a-text: var(--dm-title-project-text);
+    --logo-border-top: var(--dm-title-project-text);
+    --logo-border-right: var(--dm-title-marathon-text);
+    --logo-border-bottom: var(--dm-title-marathon-text);
+    --logo-border-left: var(--dm-title-project-text);
+
+    --overview-section-card-border-l: var(--dm-title-marathon-text);
+    --overview-section-card-border-b: var(--dm-title-project-text);
+    --news-section-card-border-l: var(--dm-updates-modal-header-gradient-start);
+    --news-section-card-border-b: var(--nav-button-active-calendar-bg); /* Using existing var as example */
+    --race-section-card-border-l: var(--nav-button-active-race-bg);
+    --race-section-card-border-b: #db2777; /* Keep pink for now, or create a dark var */
+
+
+    --custom-rect-nav-border-t: var(--dm-title-project-text);
+    --custom-rect-nav-border-r: var(--dm-title-marathon-text);
+    --custom-rect-nav-border-b: var(--dm-title-marathon-text);
+    --custom-rect-nav-border-l: var(--dm-title-project-text);
+
+    --custom-rect-today-border-t: var(--dm-title-project-text);
+    --custom-rect-today-border-r: var(--dm-title-marathon-text);
+    --custom-rect-today-border-b: var(--dm-title-marathon-text);
+    --custom-rect-today-border-l: var(--dm-title-project-text);
+}
+
+.main-container {
+    background-color: var(--main-container-bg);
+    border-radius: 0.75rem;
+    box-shadow: var(--main-container-shadow);
+    width: 100%;
+    max-width: 64rem; /* 1024px */
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 640px) {
+    .main-container {
+        padding: 2rem;
+    }
+}
+.nav-button {
+    padding: 0.6rem 1.1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    font-weight: 600;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.nav-button:hover:not(.active-overview):not(.active-plan):not(.active-calendar):not(.active-race):not(.active-info):not(.active-companion) {
+    background-color: var(--nav-button-hover-bg);
+    color: var(--nav-button-hover-text);
+}
+
+.nav-button.active-overview { background-color: var(--nav-button-active-overview-bg); color: var(--nav-button-active-overview-text); }
+.nav-button.active-overview:hover { background-color: var(--nav-button-active-overview-hover-bg); }
+
+.nav-button.active-plan { background-color: var(--nav-button-active-plan-bg); color: var(--nav-button-active-plan-text); }
+.nav-button.active-plan:hover { background-color: var(--nav-button-active-plan-hover-bg); }
+
+.nav-button.active-calendar { background-color: var(--nav-button-active-calendar-bg); color: var(--nav-button-active-calendar-text); }
+.nav-button.active-calendar:hover { background-color: var(--nav-button-active-calendar-hover-bg); }
+
+.nav-button.active-race { background-color: var(--nav-button-active-race-bg); color: var(--nav-button-active-race-text); }
+.nav-button.active-race:hover { background-color: var(--nav-button-active-race-hover-bg); }
+
+.nav-button.active-info { background-color: var(--nav-button-active-info-bg); color: var(--nav-button-active-info-text); }
+.nav-button.active-info:hover { background-color: var(--nav-button-active-info-hover-bg); }
+
+.nav-button.active-companion { background-color: var(--nav-button-active-companion-bg); color: var(--nav-button-active-companion-text); }
+.nav-button.active-companion:hover { background-color: var(--nav-button-active-companion-hover-bg); }
+
+
+.phase-button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    font-weight: 500;
+}
+.phase-button-preseason { border-color: var(--phase-button-preseason-border); color: var(--phase-button-preseason-text); }
+.phase-button-preseason:hover:not(.active) { background-color: var(--phase-button-preseason-hover-bg); }
+.phase-button-preseason.active { background-color: var(--phase-button-preseason-active-bg); color: var(--phase-button-preseason-active-text); border-color: var(--phase-button-preseason-active-border); }
+
+.phase-button-base { border-color: var(--phase-button-base-border); color: var(--phase-button-base-text); }
+.phase-button-base:hover:not(.active) { background-color: var(--phase-button-base-hover-bg); }
+.phase-button-base.active { background-color: var(--phase-button-base-active-bg); color: var(--phase-button-base-active-text); }
+
+.phase-button-specific { border-color: var(--phase-button-specific-border); color: var(--phase-button-specific-text); }
+.phase-button-specific:hover:not(.active) { background-color: var(--phase-button-specific-hover-bg); }
+.phase-button-specific.active { background-color: var(--phase-button-specific-active-bg); color: var(--phase-button-specific-active-text); border-color: var(--phase-button-specific-active-border); }
+
+.phase-button-taper { border-color: var(--phase-button-taper-border); color: var(--phase-button-taper-text); }
+.phase-button-taper:hover:not(.active) { background-color: var(--phase-button-taper-hover-bg); }
+.phase-button-taper.active { background-color: var(--phase-button-taper-active-bg); color: var(--phase-button-taper-active-text); border-color: var(--phase-button-taper-active-border); }
+
+.week-button {
+    padding: 0.5rem 0.75rem; border-radius: 0.375rem; border: 1px solid var(--week-button-border);
+    font-weight: 500; text-align: center;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.week-button.active {
+    background-color: var(--week-button-active-bg);
+    color: var(--week-button-active-text) !important;
+    border-color: var(--week-button-active-border);
+}
+
+.week-button-text-preseason { color: var(--week-button-preseason-text); }
+.week-button-text-preseason:not(.active):hover { background-color: var(--week-button-preseason-hover-bg); border-color: var(--week-button-preseason-hover-border); }
+
+.week-button-text-base { color: var(--week-button-base-text); }
+.week-button-text-base:not(.active):hover { background-color: var(--week-button-base-hover-bg); border-color: var(--week-button-base-hover-border); }
+
+.week-button-text-specific { color: var(--week-button-specific-text); }
+.week-button-text-specific:not(.active):hover { background-color: var(--week-button-specific-hover-bg); border-color: var(--week-button-specific-hover-border);}
+
+.week-button-text-taper { color: var(--week-button-taper-text); }
+.week-button-text-taper:not(.active):hover { background-color: var(--week-button-taper-hover-bg); border-color: var(--week-button-taper-hover-border);}
+
+.content-card {
+    background-color: var(--content-card-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.content-card h3.phase-title-style { margin-bottom: 0.5rem; }
+
+.overview-section-card { /* Base for most cards not getting custom rect border */
+    border-left-width: 4px;
+    border-bottom-width: 4px;
+    border-left-color: var(--overview-section-card-border-l);
+    border-bottom-color: var(--overview-section-card-border-b);
+}
+.news-section-card {
+    border-left-width: 4px;
+    border-bottom-width: 4px;
+    border-left-color: var(--news-section-card-border-l);
+    border-bottom-color: var(--news-section-card-border-b);
+}
+.race-section-card {
+    border-left-width: 4px;
+    border-bottom-width: 4px;
+    border-left-color: var(--race-section-card-border-l);
+    border-bottom-color: var(--race-section-card-border-b);
+}
+
+.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 300px; max-height: 400px; }
+@media (min-width: 768px) { .chart-container { height: 350px; } }
+.data-table { width: 100%; margin-top: 0.5rem; border-collapse: collapse; font-size: 0.875rem; }
+.data-table th, .data-table td { border: 1px solid var(--table-border); padding: 0.5rem; text-align: left; }
+.data-table th { font-weight: 600; background-color: var(--table-th-bg); }
+.schedule-table { width: 100%; margin-top: 0.75rem; border-collapse: collapse; font-size: 0.875rem; border: 1px solid var(--schedule-table-border); border-radius: 0.5rem; overflow: hidden; }
+.schedule-table th, .schedule-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--schedule-table-border); }
+.schedule-table th { background-color: var(--schedule-table-th-bg); color: var(--schedule-table-th-text); font-weight: 600; }
+.schedule-table tr:last-child td { border-bottom: none; }
+.schedule-table td:first-child { font-weight: 500; width: 25%; max-width: 100px; }
+
+#userIdInput {
+    border-width: 2px;
+    border-color: var(--input-userid-border);
+    background-color: var(--main-container-bg); /* For dark mode */
+    color: var(--text-color); /* For dark mode */
+}
+#userIdInput:focus {
+    outline: 2px solid transparent; outline-offset: 2px; border-color: var(--input-userid-focus-border);
+    box-shadow: 0 0 0 3px var(--input-userid-focus-shadow);
+}
+label[for="userIdInput"] {
+    border-left-width: 4px;
+    border-color: var(--label-userid-border-l);
+    padding-left: 0.5rem;
+}
+#loginButton {
+    border-radius: 9999px;
+}
+
+input[type="text"]:not(#userIdInput):focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    outline: 2px solid transparent; outline-offset: 2px;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 3px var(--input-focus-shadow);
+    background-color: var(--main-container-bg); /* For dark mode */
+    color: var(--text-color); /* For dark mode */
+}
+body.dark-mode input[type="text"]:not(#userIdInput),
+body.dark-mode input[type="number"],
+body.dark-mode input[type="date"] {
+    background-color: var(--dm-main-container-bg); /* Should be input field specific bg */
+    color: var(--dm-text-color);
+    border: 1px solid var(--dm-table-border); /* Example border */
+}
+
+
+.css-logo-dna {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 3.75rem;
+    line-height: 1;
+    text-align: center;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+    border-top: 3px solid var(--logo-border-top);
+    border-right: 3px solid var(--logo-border-right);
+    border-bottom: 3px solid var(--logo-border-bottom);
+    border-left: 3px solid var(--logo-border-left);
+    margin-bottom: 0.75rem;
+}
+@media (min-width: 640px) {
+    .css-logo-dna {
+        font-size: 4.5rem;
+        padding: 0.75rem 1rem;
+    }
+}
+.css-logo-dna .logo-d {
+    color: var(--logo-d-text);
+}
+.css-logo-dna .logo-n {
+    background: linear-gradient(to bottom, var(--logo-n-gradient-start) 50%, var(--logo-n-gradient-end) 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+.css-logo-dna .logo-a {
+    color: var(--logo-a-text);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track-bg); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb-bg); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover-bg); }
+#loading-message, #login-loading-message { text-align: center; padding: 2rem; font-size: 1.125rem; font-weight: 500; }
+#loading-message, #login-loading-message { color: var(--loading-message-text); } /* Combined for loading messages */
+#error-message, #login-error-message { text-align: center; padding: 2rem; font-size: 1.125rem; font-weight: 500; }
+#error-message, #login-error-message { color: var(--error-message-text); background-color: var(--error-message-bg); border: 1px solid var(--error-message-border); border-radius: 0.5rem; }
+
+#installPwaButton {
+    background-color: var(--install-pwa-button-bg);
+    color: var(--install-pwa-button-text);
+    font-weight: 600;
+    border: 2px solid var(--install-pwa-button-border);
+}
+#installPwaButton:hover {
+    background-color: var(--install-pwa-button-hover-bg);
+    border-color: var(--install-pwa-button-hover-border);
+}
+
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background-color: var(--calendar-grid-bg); border: 1px solid var(--calendar-grid-border); }
+.calendar-header {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: var(--calendar-header-bg);
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--calendar-header-text);
+    border: 1px solid var(--calendar-header-border);
+}
+.calendar-day { background-color: var(--calendar-day-bg); padding: 0.5rem; min-height: 100px; font-size: 0.75rem; border: 1px solid var(--calendar-day-border); cursor: default; }
+.calendar-day.has-activity { cursor: pointer; }
+.calendar-day.has-activity:hover { background-color: var(--calendar-day-hover-bg); }
+.calendar-day.other-month { background-color: var(--calendar-day-other-month-bg); color: var(--calendar-day-other-month-text); cursor: default;}
+.calendar-day.other-month:hover { background-color: var(--calendar-day-other-month-bg); }
+.calendar-day.is-today { background-color: var(--calendar-day-today-bg); border: 2px solid var(--calendar-day-today-border); }
+.calendar-day .day-number { font-weight: 600; margin-bottom: 0.25rem; display: block; }
+body.dark-mode .calendar-day .day-number { color: var(--dm-text-color); } /* Ensure day numbers are visible */
+body.dark-mode .calendar-day.is-today .day-number { color: var(--dm-text-color); } /* Ensure today's day number is visible */
+
+
+.activity-thumbnail {
+    display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    padding: 0.25rem; border-radius: 0.25rem; margin-top: 0.25rem;
+    font-size: 0.7rem;
+}
+.activity-thumbnail-easy { background-color: var(--activity-thumb-easy-bg); color: var(--activity-thumb-easy-text); }
+.activity-thumbnail-easy-green { background-color: var(--activity-thumb-easy-green-bg); color: var(--activity-thumb-easy-green-text); }
+.activity-thumbnail-fartlek { background-color: var(--activity-thumb-fartlek-bg); color: var(--activity-thumb-fartlek-text); }
+.activity-thumbnail-tempo { background-color: var(--activity-thumb-tempo-bg); color: var(--activity-thumb-tempo-text); }
+.activity-thumbnail-interval { background-color: var(--activity-thumb-interval-bg); color: var(--activity-thumb-interval-text); }
+.activity-thumbnail-long { background-color: var(--activity-thumb-long-bg); color: var(--activity-thumb-long-text); }
+.activity-thumbnail-race { background-color: var(--activity-thumb-race-bg); color: var(--activity-thumb-race-text); }
+.activity-thumbnail-rest { background-color: var(--activity-thumb-rest-bg); color: var(--activity-thumb-rest-text); }
+.activity-thumbnail-default { background-color: var(--activity-thumb-default-bg); color: var(--activity-thumb-default-text); }
+
+.custom-rect-border-nav { /* For nav tabs */
+    border-top: 3px solid var(--custom-rect-nav-border-t);
+    border-right: 3px solid var(--custom-rect-nav-border-r);
+    border-bottom: 3px solid var(--custom-rect-nav-border-b);
+    border-left: 3px solid var(--custom-rect-nav-border-l);
+    padding: 0.75rem !important; /* Unified padding */
+    border-style: solid !important;
+}
+.custom-rect-border-today { /* For today's training card */
+    border-top: 3px solid var(--custom-rect-today-border-t) !important;
+    border-right: 3px solid var(--custom-rect-today-border-r) !important;
+    border-bottom: 3px solid var(--custom-rect-today-border-b) !important;
+    border-left: 3px solid var(--custom-rect-today-border-l) !important;
+    border-style: solid !important;
+}
+.custom-rect-border-this-week { /* For this week's plan card */
+    border-top: 3px solid var(--custom-rect-this-week-border-t) !important;
+    border-left: 3px solid var(--custom-rect-this-week-border-l) !important;
+    border-bottom: 3px solid var(--custom-rect-this-week-border-b) !important;
+    border-right: 3px solid var(--custom-rect-this-week-border-r) !important;
+    border-style: solid !important;
+}
+body.dark-mode .custom-rect-border-this-week {
+    border-top-color: var(--nav-button-active-calendar-bg) !important; /* Example: green */
+    border-left-color: var(--nav-button-active-calendar-bg) !important;
+    border-bottom-color: var(--nav-button-active-race-bg) !important; /* Example: purple */
+    border-right-color: var(--nav-button-active-race-bg) !important;
+}
+
+
+.main-title {
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+.title-project {
+    color: var(--title-project-text);
+}
+.title-marathon {
+    color: var(--title-marathon-text);
+}
+
+.loader {
+    border: 4px solid var(--loader-border);
+    border-top: 4px solid var(--loader-border-top);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+.pdf-button {
+    background-color: var(--pdf-button-bg);
+    color: var(--pdf-button-text);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.pdf-button:hover {
+    background-color: var(--pdf-button-hover-bg);
+}
+.pdf-button svg {
+    width: 0.875rem;
+    height: 0.875rem;
+}
+.calendar-nav-button {
+    background-color: var(--calendar-nav-button-bg);
+    color: var(--calendar-nav-button-text);
+    padding: 0.5rem 0.75rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.calendar-nav-button:hover {
+    background-color: var(--calendar-nav-button-hover-bg);
+}
+.calendar-nav-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+body.dark-mode .calendar-nav-button svg {
+    color: var(--dm-text-color); /* ensure icons are visible */
+}
+
+#toggleRepeatsButton, #toggleZonesButton {
+    background-color: var(--toggle-button-bg);
+    color: var(--toggle-button-text);
+    border: 2px solid var(--toggle-button-border);
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+#toggleRepeatsButton:hover, #toggleZonesButton:hover {
+    background-color: var(--toggle-button-hover-bg);
+    border-color: var(--toggle-button-hover-border);
+}
+
+/* Today's Training Card - Activity Text Color Classes */
+.activity-text-easy, .pace-text-easy { color: var(--activity-text-easy) !important; }
+.activity-text-recovery, .pace-text-recovery { color: var(--activity-text-recovery) !important; }
+.activity-text-base, .pace-text-base { color: var(--activity-text-base) !important; }
+.activity-text-tempo, .pace-text-tempo { color: var(--activity-text-tempo) !important; }
+.activity-text-interval, .activity-text-intervals, .pace-text-interval, .pace-text-intervals { color: var(--activity-text-interval) !important; }
+.activity-text-fartlek, .pace-text-fartlek { color: var(--activity-text-fartlek) !important; }
+.activity-text-str, .activity-text-hills, .pace-text-str, .pace-text-hills { color: var(--activity-text-str-hills) !important; }
+.activity-text-rest, .pace-text-rest { color: var(--activity-text-rest) !important; }
+.activity-text-zone, .activity-text-race, .pace-text-zone, .pace-text-race { color: var(--activity-text-zone-race) !important; }
+.activity-text-double, .pace-text-double { color: var(--activity-text-double) !important; }
+.activity-text-mobility, .pace-text-mobility { color: var(--activity-text-mobility) !important; }
+
+body.dark-mode .activity-text-easy, body.dark-mode .pace-text-easy { color: #4ade80 !important; } /* green-400 */
+body.dark-mode .activity-text-recovery, body.dark-mode .pace-text-recovery { color: #7dd3fc !important; } /* sky-300 */
+body.dark-mode .activity-text-base, body.dark-mode .pace-text-base { color: #93c5fd !important; } /* blue-300 */
+body.dark-mode .activity-text-tempo, body.dark-mode .pace-text-tempo { color: #fdba74 !important; } /* orange-300 */
+body.dark-mode .activity-text-interval, body.dark-mode .activity-text-intervals, body.dark-mode .pace-text-interval, body.dark-mode .pace-text-intervals { color: #fca5a5 !important; } /* red-300 */
+body.dark-mode .activity-text-fartlek, body.dark-mode .pace-text-fartlek { color: #f9a8d4 !important; } /* pink-300 */
+body.dark-mode .activity-text-str, body.dark-mode .activity-text-hills, body.dark-mode .pace-text-str, body.dark-mode .pace-text-hills { color: #d4af80 !important; } /* custom brown-ish */
+body.dark-mode .activity-text-rest, body.dark-mode .pace-text-rest { color: #9ca3af !important; } /* gray-400 */
+body.dark-mode .activity-text-zone, body.dark-mode .activity-text-race, body.dark-mode .pace-text-zone, body.dark-mode .pace-text-race { color: #c4b5fd !important; } /* violet-300 */
+body.dark-mode .activity-text-double, body.dark-mode .pace-text-double { color: #fcd34d !important; } /* amber-300 */
+body.dark-mode .activity-text-mobility, body.dark-mode .pace-text-mobility { color: #d4af80 !important; } /* custom brown-ish */
+
+
+.highlight-zone-pace {
+    background-color: var(--highlight-zone-pace-bg) !important;
+    color: var(--highlight-zone-pace-text) !important;
+    font-weight: bold !important;
+}
+
+/* --- Companion App Styles --- */
+.companion-nav-button {
+    padding: 0.6rem 1.1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    font-weight: 600;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+.companion-nav-button:hover:not(.active) {
+    background-color: var(--companion-nav-button-hover-bg);
+    color: var(--companion-nav-button-hover-text);
+}
+.companion-nav-button.active.drills { background-color: var(--companion-nav-button-active-drills-bg); color: var(--companion-nav-button-active-drills-text); }
+.companion-nav-button.active.mobility { background-color: var(--companion-nav-button-active-mobility-bg); color: var(--companion-nav-button-active-mobility-text); }
+.companion-nav-button.active.strength { background-color: var(--companion-nav-button-active-strength-bg); color: var(--companion-nav-button-active-strength-text); }
+
+.exercise-card {
+    background-color: var(--exercise-card-bg);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: var(--exercise-card-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.exercise-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--exercise-card-hover-shadow);
+}
+.exercise-card h3 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-color); /* Ensure heading text color is updated */
+}
+.exercise-card .details {
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    display: inline-block;
+}
+.details-drills { background-color: var(--details-drills-bg); color: var(--details-drills-text); }
+.details-mobility { background-color: var(--details-mobility-bg); color: var(--details-mobility-text); }
+.details-strength { background-color: var(--details-strength-bg); color: var(--details-strength-text); }
+.video-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--video-link-text);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.video-link:hover {
+    color: var(--video-link-hover-text);
+}
+.video-link svg { fill: currentColor; } /* Ensure SVG icon color matches link */
+
+.updates-card { /* Used on overview page */
+    border-left-width: 4px;
+    border-left-color: var(--updates-card-border-l);
+}
+body.dark-mode .updates-card {
+    border-left-color: var(--dm-updates-modal-header-gradient-start); /* Match modal style */
+}
+
+
+/* --- Updates Modal --- */
+#updates-modal .updates-modal-content-wrapper {
+    background-color: var(--updates-modal-bg);
+    border-radius: 0.75rem;
+    box-shadow: var(--updates-modal-shadow);
+    width: 100%;
+    max-width: 36rem; /* 576px */
+    padding: 1.5rem;
+    position: relative;
+    max-height: 80vh; /* Make it scrollable if content is long */
+    overflow-y: auto;
+}
+#updates-modal .updates-modal-content-wrapper h2 {
+    background: linear-gradient(to right, var(--updates-modal-header-gradient-start), var(--updates-modal-header-gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+#close-updates-modal-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    color: var(--updates-modal-close-text);
+    background-color: var(--updates-modal-close-bg);
+    border-radius: 9999px;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    z-index: 10;
+}
+#close-updates-modal-btn:hover {
+    color: var(--updates-modal-close-hover-text);
+    background-color: var(--updates-modal-close-hover-bg);
+    transform: rotate(90deg);
+}
+#updates-modal .updates-card { /* Used inside modal */
+    border-left-width: 4px;
+    border-left-color: var(--updates-modal-card-border-l);
+    background-color: var(--updates-modal-card-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+body.dark-mode #updates-modal .updates-card {
+    border-left-color: var(--dm-updates-modal-header-gradient-start);
+    background-color: var(--dm-updates-modal-card-bg); /* this should be darker than modal content wrapper */
+}
+body.dark-mode #updates-modal .updates-modal-content-wrapper {
+     background-color: var(--dm-main-container-bg); /* Slightly lighter than card bg */
+}
+
+
+@page {
+    margin: 15mm;
+}
+
+@media print {
+    body {
+        background-color: var(--print-body-bg) !important;
+        color: var(--print-text) !important; /* Ensure body text defaults to print colors */
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        min-width: 0 !important; /* Allow body to shrink to content */
+    }
+
+    body * {
+        display: none !important;
+        visibility: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: transparent !important; /* Avoid unexpected backgrounds */
+        color: inherit !important; /* Inherit print text color */
+        border-color: var(--print-text) !important; /* Make borders visible if needed */
+        box-shadow: none !important;
+    }
+
+    #print-section-container {
+        display: block !important;
+        visibility: visible !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important; /* Page margins handled by @page */
+        background-color: var(--print-body-bg) !important;
+    }
+
+    #print-section-container .currently-printing-this-week {
+        display: block !important;
+        visibility: visible !important;
+        width: 100% !important; /* Takes width from @page margins */
+        margin: 0 auto !important;
+        padding: 0 !important; /* Adjusted as @page handles margins/padding for overall page */
+        box-sizing: border-box !important;
+        background-color: var(--print-body-bg) !important;
+        font-size: 10pt !important;
+        color: var(--print-text) !important;
+        border: none !important; /* Ensure no outer border */
+        box-shadow: none !important;
+    }
+
+    /* Make all children of currently-printing-this-week visible and display block by default */
+    #print-section-container .currently-printing-this-week * {
+        display: block !important; /* Overridden by more specific table rules below */
+        visibility: visible !important;
+        background-color: transparent !important; /* Ensure inner elements don't have odd backgrounds */
+        color: var(--print-text) !important; /* Ensure all text is printable */
+        box-shadow: none !important;
+        border-color: var(--print-text) !important; /* Default border color for printable items */
+    }
+
+    /* Revert display for table elements to ensure they render as tables */
+    #print-section-container .schedule-table,
+    #print-section-container .schedule-table caption,
+    #print-section-container .schedule-table tbody,
+    #print-section-container .schedule-table tfoot,
+    #print-section-container .schedule-table thead,
+    #print-section-container .schedule-table tr,
+    #print-section-container .schedule-table th,
+    #print-section-container .schedule-table td {
+        display: revert !important;
+    }
+
+    #print-section-container .currently-printing-this-week h4,
+    #print-section-container .currently-printing-this-week p,
+    #print-section-container .currently-printing-this-week strong,
+    #print-section-container .currently-printing-this-week .schedule-table th,
+    #print-section-container .currently-printing-this-week .schedule-table td,
+    #print-section-container .currently-printing-this-week .text-xs,
+    #print-section-container .currently-printing-this-week .text-sm,
+    #print-section-container .currently-printing-this-week .text-lg,
+    #print-section-container .currently-printing-this-week .font-bold,
+    #print-section-container .currently-printing-this-week .font-medium,
+    #print-section-container .currently-printing-this-week .font-semibold {
+        color: var(--print-text) !important;
+        background-color: transparent !important; /* Ensure no colored backgrounds from Tailwind */
+    }
+
+    #print-section-container .currently-printing-this-week .schedule-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin-top: 0.5rem !important;
+        page-break-inside: avoid !important;
+    }
+    #print-section-container .currently-printing-this-week .schedule-table th,
+    #print-section-container .currently-printing-this-week .schedule-table td {
+        border: 1px solid var(--print-table-border) !important;
+        padding: 0.3rem 0.4rem !important; /* Slightly reduced padding for print */
+        text-align: left !important;
+    }
+    #print-section-container .currently-printing-this-week .schedule-table th {
+        font-weight: bold !important;
+        background-color: var(--print-table-th-bg) !important; /* Light gray for header */
+    }
+    #print-section-container .currently-printing-this-week .schedule-table tr {
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+    #print-section-container .currently-printing-this-week .schedule-table td:first-child {
+        font-weight: bold !important;
+    }
+
+    #print-section-container .currently-printing-this-week p.italic {
+        margin-top: 0.75rem !important;
+        padding: 0.5rem !important;
+        border: 1px solid var(--print-notes-border) !important;
+        border-radius: 0.25rem !important;
+    }
+
+    /* Handle links for printing */
+    #print-section-container .currently-printing-this-week a {
+        color: var(--print-text) !important;
+        text-decoration: none !important;
+    }
+    /* Optionally show href for links, uncomment if desired
+    #print-section-container .currently-printing-this-week a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+        color: #555 !important;
+    }
+    */
+
+    /* Ensure specific Tailwind text colors used in printable content are black for print */
+    #print-section-container .currently-printing-this-week .text-stone-800,
+    #print-section-container .currently-printing-this-week .text-stone-700,
+    #print-section-container .currently-printing-this-week .text-stone-600,
+    #print-section-container .currently-printing-this-week .text-sky-700,
+    #print-section-container .currently-printing-this-week .text-green-700,
+    #print-section-container .currently-printing-this-week .text-amber-500 {
+        color: var(--print-text) !important;
+    }
+    /* Ensure specific Tailwind background colors used in printable content are transparent */
+    #print-section-container .currently-printing-this-week .bg-stone-100,
+    #print-section-container .currently-printing-this-week .bg-red-50,
+    #print-section-container .currently-printing-this-week .bg-orange-50,
+    #print-section-container .currently-printing-this-week .bg-amber-50,
+    #print-section-container .currently-printing-this-week .bg-yellow-50,
+    #print-section-container .currently-printing-this-week .bg-lime-50,
+    #print-section-container .currently-printing-this-week .bg-green-50,
+    #print-section-container .currently-printing-this-week .bg-emerald-50 {
+        background-color: transparent !important;
+    }
+
+
+    .no-print,
+    .pdf-button,
+    .nav-button,
+    body > header,
+    body > nav,
+    #login-container,
+    #main-app-wrapper > header, /* This will hide the dark mode toggle in print */
+    #main-app-wrapper > nav,
+    #calendar-controls,
+    .calendar-grid,
+    #this-weeks-plan-card,
+    #mileage-chart-modal,
+    #updates-modal,
+    #training-plan-content .chart-container,
+    .chart-container p,
+    #calendar-selected-day-header,
+    #raceElevationChartContainer,
+    #phase-navigation,
+    #phase-details > .content-card > h3:not(.phase-title-style),
+    #phase-details > .content-card > hr,
+    #phase-details > .content-card > p,
+    #phase-details > .content-card > h4:not(:first-child),
+    #phase-details .week-button,
+    #training-plan-content > div:first-child:not(#week-details-container)
+        {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+.today-pace-table {
+    width: 100%;
+    margin-top: 0.5rem;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+.today-pace-table th, .today-pace-table td {
+    border: 1px solid var(--today-pace-table-border);
+    padding: 0.3rem 0.5rem;
+    text-align: left;
+}
+.today-pace-table th {
+    background-color: var(--today-pace-table-th-bg);
+    font-weight: 500;
+    color: var(--today-pace-table-th-text);
+}
+.today-pace-table th.header-zone { color: var(--today-pace-table-th-text); } /* Already covered by general th */
+.today-pace-table th.header-pace { color: var(--today-pace-table-th-text); } /* Already covered by general th */
+.today-pace-table th.header-low { color: var(--today-pace-table-header-low); }
+.today-pace-table th.header-average { color: var(--today-pace-table-header-average); }
+.today-pace-table th.header-high { color: var(--today-pace-table-header-high); }
+
+.today-pace-table td {
+    font-weight: 600;
+    color: var(--text-color); /* Ensure td text color is updated */
+}
+.today-pace-table td:first-child {
+    font-weight: 500;
+}
+
+.todays-activity-box {
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    margin-top: 0.5rem;
+    border: 1px solid var(--todays-activity-box-border);
+    background-color: var(--todays-activity-box-bg);
+}
+.todays-activity-box p strong.activity-text {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--todays-activity-text-default); /* Default color, will be overridden by specific classes below */
+}
+.todays-weekly-notes-box {
+    border: 1px solid var(--todays-weekly-notes-box-border);
+    background-color: var(--todays-weekly-notes-box-bg);
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    margin-top: 0.5rem;
+}
+body.dark-mode .todays-weekly-notes-box p, body.dark-mode .todays-weekly-notes-box li {
+    color: var(--dm-text-color); /* Ensure text inside notes is readable */
+}
+
+
+@media (max-width: 639px) {
+    .calendar-day {
+        min-height: 40px;
+        padding: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .calendar-day .day-number {
+        font-size: 0.875rem;
+        margin-bottom: 0;
+    }
+    .calendar-day .activity-thumbnail {
+        display: none;
+    }
+    .calendar-day.activity-thumbnail-fartlek { background-color: var(--mobile-calendar-day-fartlek-bg); color: var(--mobile-calendar-day-fartlek-text) !important; }
+    .calendar-day.activity-thumbnail-easy-green { background-color: var(--mobile-calendar-day-easy-green-bg); color: var(--mobile-calendar-day-easy-green-text) !important; }
+    .calendar-day.activity-thumbnail-interval { background-color: var(--mobile-calendar-day-interval-bg); color: var(--mobile-calendar-day-interval-text) !important; }
+    .calendar-day.activity-thumbnail-easy { background-color: var(--mobile-calendar-day-easy-bg); color: var(--mobile-calendar-day-easy-text) !important; }
+    .calendar-day.activity-thumbnail-tempo { background-color: var(--mobile-calendar-day-tempo-bg); color: var(--mobile-calendar-day-tempo-text) !important; }
+    .calendar-day.activity-thumbnail-long { background-color: var(--mobile-calendar-day-long-bg); color: var(--mobile-calendar-day-long-text) !important; }
+    .calendar-day.activity-thumbnail-race { background-color: var(--mobile-calendar-day-race-bg); color: var(--mobile-calendar-day-race-text) !important; }
+    .calendar-day.activity-thumbnail-rest { background-color: var(--mobile-calendar-day-rest-bg); color: var(--mobile-calendar-day-rest-text) !important; }
+    .calendar-day.activity-thumbnail-default { background-color: var(--mobile-calendar-day-default-bg); color: var(--mobile-calendar-day-default-text) !important; }
+
+    .calendar-day.is-today .day-number {
+        color: var(--mobile-calendar-day-today-number-text);
+    }
+    body.dark-mode .calendar-day.is-today .day-number {
+        color: var(--dm-mobile-calendar-day-today-number-text);
+    }
+    .calendar-day.has-activity .day-number {
+        mix-blend-mode: difference;
+        filter: invert(1) grayscale(1) contrast(100);
+    }
+    body.dark-mode .calendar-day.has-activity .day-number {
+        /* Re-evaluate this for dark mode, might need to remove or adjust for visibility */
+        /* mix-blend-mode: unset; filter: unset; /* Option 1: remove effect */
+        /* color: var(--dm-text-color); /* Option 2: Ensure contrast */
+    }
+}
+
+/* Dark mode specific overrides for button icon colors if not handled by Tailwind */
+body.dark-mode #darkModeToggle svg {
+    stroke: var(--dm-text-color); /* Example: Use light text color for icon stroke */
+}
+
+/* Ensure Tailwind's text colors in HTML are overridden if needed */
+body.dark-mode .text-stone-800 { color: var(--dm-text-color) !important; }
+body.dark-mode .text-stone-700 { color: var(--dm-text-color) !important; } /* For labels */
+body.dark-mode .text-stone-600 { color: #d1d5db !important; } /* gray-300 for subtitles */
+body.dark-mode .text-sky-600 { color: #7dd3fc !important; } /* sky-300 for links/highlights */
+body.dark-mode .text-sky-700 { color: #38bdf8 !important; } /* sky-400 for stronger highlights */
+    body.dark-mode .text-amber-500 { color: #fcd34d !important; } /* amber-300 */
+    body.dark-mode .text-green-700 { color: #4ade80 !important; } /* green-400 */
+    body.dark-mode .text-violet-700 { color: #a78bfa !important; } /* violet-400 */
+    body.dark-mode .text-violet-600 { color: #c4b5fd !important; } /* violet-300 */
+    body.dark-mode .text-indigo-700 { color: #a5b4fc !important; } /* indigo-300 */
+    body.dark-mode .text-indigo-800 { color: #818cf8 !important; } /* indigo-400 */
+    body.dark-mode .text-emerald-600 { color: #6ee7b7 !important; } /* emerald-300 */
+    body.dark-mode .text-emerald-700 { color: #34d399 !important; } /* emerald-400 */
+    body.dark-mode .text-yellow-500 { color: #fde047 !important; } /* yellow-300 */
+
+
+/* Ensure Tailwind's background colors in HTML are overridden */
+body.dark-mode .bg-sky-600 { background-color: var(--nav-button-active-overview-bg) !important; } /* Or a specific dark mode primary button color */
+body.dark-mode .hover\:bg-sky-700:hover { background-color: var(--nav-button-active-overview-hover-bg) !important; }
+
+    /* Dark mode for table row backgrounds (Tailwind bg-color-50 series) */
+    body.dark-mode .bg-stone-100 { background-color: #2c3e50 !important; /* Darker slate/blue */ }
+    body.dark-mode .bg-red-50 { background-color: #4a1d1d !important; /* Dark red */ }
+    body.dark-mode .bg-orange-50 { background-color: #522c15 !important; /* Dark orange */ }
+    body.dark-mode .bg-amber-50 { background-color: #543810 !important; /* Dark amber */ }
+    body.dark-mode .bg-yellow-50 { background-color: #534a18 !important; /* Dark yellow */ }
+    body.dark-mode .bg-lime-50 { background-color: #2f481a !important; /* Dark lime */ }
+    body.dark-mode .bg-green-50 { background-color: #1c4b30 !important; /* Dark green */ }
+    body.dark-mode .bg-emerald-50 { background-color: #154734 !important; /* Dark emerald */ }
+    body.dark-mode .bg-violet-50 { background-color: #2f1e44 !important; /* Dark violet */ }
+
+
+    /* Ensure text in these specific background rows is light */
+    body.dark-mode .bg-red-50 td, body.dark-mode .bg-red-50 strong,
+    body.dark-mode .bg-orange-50 td, body.dark-mode .bg-orange-50 strong,
+    body.dark-mode .bg-amber-50 td, body.dark-mode .bg-amber-50 strong,
+    body.dark-mode .bg-yellow-50 td, body.dark-mode .bg-yellow-50 strong,
+    body.dark-mode .bg-lime-50 td, body.dark-mode .bg-lime-50 strong,
+    body.dark-mode .bg-green-50 td, body.dark-mode .bg-green-50 strong,
+    body.dark-mode .bg-emerald-50 td, body.dark-mode .bg-emerald-50 strong,
+    body.dark-mode .bg-violet-50 td, body.dark-mode .bg-violet-50 strong,
+    body.dark-mode .bg-stone-100 td, body.dark-mode .bg-stone-100 strong,
+    body.dark-mode .bg-stone-100 th { /* For schedule table headers */
+        color: var(--dm-text-color) !important;
+    }
+
+
+/* Override for mileage chart modal background and text */
+body.dark-mode #mileage-chart-modal > div {
+    background-color: var(--dm-main-container-bg);
+    color: var(--dm-text-color);
+}
+body.dark-mode #mileage-chart-modal-title {
+    color: var(--dm-title-marathon-text); /* Or a more general heading color for dark mode */
+}
+body.dark-mode #closeMileageChartBtn {
+    color: var(--dm-text-color);
+}
+body.dark-mode #closeMileageChartBtn:hover {
+    color: var(--dm-nav-button-hover-text);
+}
+
+/* Ensure chart.js legend/axes are visible in dark mode */
+body.dark-mode .chart-container {
+    /* Chart.js might inject styles directly or use parent color. Add overrides if needed */
+}
+/* If Chart.js uses parent color for text, this should help */
+body.dark-mode #mileageChartModalCanvas, body.dark-mode /* other canvas IDs */ {
+    /* Chart.js often sets its own colors. May need JS to update chart options for dark mode */
+}
+
+/* Specific text color overrides for today-pace-table if not covered by general text-stone or activity-text */
+body.dark-mode .today-pace-table .text-teal-700 { color: #4fd1c5 !important; /* Lighter teal */ }
+body.dark-mode .today-pace-table .text-green-600 { color: #68d391 !important; /* Lighter green */ }
+body.dark-mode .today-pace-table .text-sky-600 { color: #7fccff !important; /* Lighter sky */ }
+body.dark-mode .today-pace-table .text-lime-600 { color: #a8e977 !important; /* Lighter lime */ }
+body.dark-mode .today-pace-table .text-amber-500 { color: #fcd34d !important; /* Lighter amber */ }
+body.dark-mode .today-pace-table .text-red-600 { color: #fca5a5 !important; /* Lighter red */ }
+
+/* Ensure all text in schedule-table and today-pace-table defaults to --dm-text-color if not specifically styled */
+body.dark-mode .schedule-table td,
+body.dark-mode .today-pace-table td {
+    color: var(--dm-text-color); /* Default for all td cells */
+}
+/* Override for the bolded day name in schedule table if it was text-stone-800 */
+body.dark-mode .schedule-table td.font-bold {
+    color: var(--dm-text-color) !important;
+}
+/* Ensure specific pace zone colors in today's pace table override the default td color */
+body.dark-mode .today-pace-table td.text-green-600 { color: #68d391 !important; }
+body.dark-mode .today-pace-table td.text-sky-600 { color: #7fccff !important; }
+body.dark-mode .today-pace-table td.text-lime-600 { color: #a8e977 !important; }
+/* Add other specific zone colors if they exist and are different from the general activity-text overrides */
